@@ -16,13 +16,14 @@ include $(SRC_DIR)/mcMd/patterns.mk
 # Location of *.o and *.d files for main programs
 mdSim=$(BLD_DIR)/mcMd/mdSim
 mcSim=$(BLD_DIR)/mcMd/mcSim
+user=$(BLD_DIR)/mcMd/user
 
 #-----------------------------------------------------------------------
 # Main targets
 
 # Note: Library and exectable paths are defined in mcMd/config.mk
 
-all: $(mcMd_LIB) $(mcSim_EXE) $(mdSim_EXE)
+all: $(mcMd_LIB) $(mcSim_EXE) $(mdSim_EXE) $(user_EXE)
 
 lib: (mcMd_LIB)
 
@@ -65,6 +66,9 @@ endif
 # Executable targets
 # Note: mcSim_EXE and mdSim_EXE are defined in mcMd/config.mk
 
+$(user_EXE): $(user).o $(LIBS)
+	$(CXX) -o $(user_EXE) $(user).o $(LIBS) $(LDFLAGS)
+
 $(mcSim_EXE): $(mcSim).o $(LIBS)
 	$(CXX) -o $(mcSim_EXE) $(mcSim).o $(LIBS) $(LDFLAGS)
  
@@ -78,6 +82,9 @@ mcSim:
 
 mdSim:
 	$(MAKE) $(mdSim_EXE)
+
+user:
+	$(MAKE) $(user_EXE) 
 
 #-----------------------------------------------------------------------
 # Include dependency files

@@ -1,0 +1,28 @@
+BLD_DIR_REL =../..
+include $(BLD_DIR_REL)/config.mk
+include $(SRC_DIR)/mcMd/patterns.mk
+
+
+SRC_FL := $(wildcard $(USR_DIR)/*.cpp)
+user_EXE=dynamics
+OBJ:=$(SRC_FL:./%.c=./%.o)
+user=$(USR_DIR)
+
+all: $(user_EXE)
+
+$(user_EXE): $(OBJ) $(LIBS)
+	$(CXX) $(INCLUDES) -o $(user_EXE) $(OBJ) $(LIBS) $(LDFLAGS)
+
+$(user).o: $(USR_DIR)/%.cpp
+	$(CXX) $(INCLUDES) $(MCMD_DEFINES) $(CXXFLAGS) -c -o $@ $(USR_DIR)/%.cpp
+#ifdef MAKEDEP
+#	$(MAKEDEP) $(INCLUDES) $(MCMD_DEFINES) $(CXXFLAGS) $(MCMD_CFGS) -S$(SRC_DIR) -B$(BLD_DIR) $<
+#endif
+
+clean:
+	rm -f $(mcMd_user_OBJS) $(mcMd_user_OBJS:.o=.d)
+
+clean-deps:
+	rm -f $(mcMd_user_OBJS:.o=.d)
+
+-include $(mcMd_user_OBJS:.o=.d)

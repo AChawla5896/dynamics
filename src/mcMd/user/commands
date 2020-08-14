@@ -1,0 +1,7 @@
+Input Prefix: in/cluster.clusters
+Output Prefix: out/cluster.clusters
+Start: 14990
+Increment: 1
+Final: 14999
+Cutoff unimers: 3
+Cutoff combine: 34.6
