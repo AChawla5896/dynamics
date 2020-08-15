@@ -1,4 +1,5 @@
 #include "mcMd/user/clusterInfo.h"
+#include "mcMd/user/mapping.h"
 
 #include <iostream>
 #include <fstream>
@@ -6,6 +7,8 @@
 #include <sstream>
 
 using namespace std;
+using namespace Util;
+
 
 int main (){
 
@@ -95,20 +98,23 @@ int main (){
    std::ifstream inFileName1 (IPre+to_string(T0+delT));
    std::ofstream outFileName0 (OPre+to_string(T0));
    std::ofstream outFileName1 (OPre+to_string(T0+delT));
-   clusterInfo step0, step1, temp;
+   clusterInfo step0;
+   clusterInfo step1;
+   clusterInfo temp;
  
    /* Read the first two time steps using readStep0 so as to allocate 
    * the DArrays
    */
-   step0.readStep0(inFileName0);
-   step1.readStep0(inFileName1);
+   step0.readStep0(inFileName0, cutoff_U);
+   step1.readStep0(inFileName1, cutoff_U);
 
    // Update maxClusterId. This is a static variable.
    // After this it needs to be updated in the mapping function
    step0.maxClusterId = step0.nClusters;
 
    // Add a MAPPING command over here
-   
+   mapping (& step0, & step1, cutoff_U, cutoff_C);   
+ 
    // Writing these timesteps to new output files
    step0.writeStep(outFileName0);
    step1.writeStep(outFileName1);
@@ -139,9 +145,10 @@ int main (){
       outFileName1.open(OPre+to_string(iFile));
  
       // Reading the next cluster file
-      step1.readStep(inFileName1);
+      step1.readStep(inFileName1, cutoff_U);
 
       // MAPPING from step0 to step1
+      mapping (& step0, & step1, cutoff_U, cutoff_C);
 
       // Writing the step1 file 
       step1.writeStep(outFileName1);

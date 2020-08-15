@@ -30,7 +30,7 @@ class clusterInfo{
       // less than equal to cutoff_U. Rest of the clusters will remain 
       // untouched. nClusters, clusterId and whichCluster should be changed 
       // accordingly.
-      void organize (std::vector< std::vector<int > > clustersRead, int cutoff_U);
+      void organize_clus (std::vector< std::vector<int > > clustersRead, int cutoff_U);
 
       void writeStep (std::ostream& out);
 
@@ -51,30 +51,21 @@ class clusterInfo{
       // Consists of all the information on clusters and comprising molecules
       // Outer vector size: nClusters
       // Inner vector size: aggregation number of each of the clusters
-      std::vector< std::vector<int > > clusters;
-
-      // Consists of the list of all the molecules part of clusters which 
+      // clusters[0] has the list of all the molecules part of clusters which 
       // have an aggregation number less than equal to cutoff_U.
       // See: organize
-      std::vector<int > melt;
+      std::vector< std::vector<int > > clusters;
 
       // Cluster IDs presently in use. Need to update this when you have 
       // mapped the clusters
-      // melt clusterId is not present in this vector. It is always denoted by 
-      // clusterId = 0
       // Size: nClusters
-      // Would initially range from 1 - (nClusters)
       std::vector<int > clusterIds;
 
       // This size of this array needs to be equal to the number of molecules
       // Will be used to get the clusterId using the molecule
-      // Size: nMolecules
       DArray<int > whichCluster;
 
-      // total number of clusters at that timestep (does not include melt),
-      // Therefore, total number of clusters including melt will be 
-      // nClusters + 1
-      // update when you find 
+      // total number of clusters at that timestep, update when you find 
       // the total number of lines
       int nClusters;
 

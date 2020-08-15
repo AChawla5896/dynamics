@@ -9,8 +9,9 @@ USR_DIR = $(SRC_DIR)/mcMd/user
 
 dynamics_prog = $(USR_DIR)/dynamics
 cluster_Class = $(USR_DIR)/clusterInfo
+mapping_Class = $(USR_DIR)/mapping
 
-LOCAL_OBJ= $(dynamics_prog).o $(cluster_Class).o
+LOCAL_OBJ= $(dynamics_prog).o $(cluster_Class).o $(mapping_Class).o
 
 print:
 	@echo $(INCLUDES) $(CXXFLAGS) $(SRC_DIR) $(user_EXE) $(MCMD_DEFINES)

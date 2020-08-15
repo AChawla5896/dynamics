@@ -76,20 +76,15 @@ void clusterInfo::readStep0 (std::istream& in, int cutoff_U)
 
    // Assert iCluster is equal to nClusters
    if (iCluster != nClusters) {
-      std::cout << "Read file error: iCluster is not equal to nCluster" << std::endl;
+      std::cout << "iCluster is not equal to nCluster" << std::endl;
    }
 
-   // Orgainze the clusters so as to have clusters[0] have a list of molecules
+   // orgainze the clusters so as to have clusters[0] have a list of molecules
    // in clusters having aggregation number less than equal to a cutoff
-   organize (clustersRead, cutoff_U);
+  //  organize (clustersRead, cutoff_U);
 
    // Finding the total number of molecules in the simulation
    // also allocating the DArray, whichCluster 
-   for (int iMol = 0; iMol < melt.size(); iMol++) {
-      if ( melt [iMol] > nMolecules ) {
-         nMolecules = melt [iMol];
-      }
-   }
    for (int iCluster = 0; iCluster < nClusters; iCluster++) {
       for (int iMol = 0; iMol < clusters [iCluster].size(); iMol++) {
          if ( clusters [iCluster] [iMol] > nMolecules ) {
@@ -97,17 +92,12 @@ void clusterInfo::readStep0 (std::istream& in, int cutoff_U)
          }
       }
    }
-
-
    // Incrementing because the numbering of molecules starts from 0
    nMolecules++;
    whichCluster.allocate(nMolecules);
  
    // Setting the DArray which cluster.
    // Will be used in mapping
-   for (int iMol = 0; iMol < melt.size(); iMol++) {
-      whichCluster [ melt [iMol] ] = 0;
-   }
    for (int iCluster = 0; iCluster < nClusters; iCluster++) {
       for (int iMol = 0; iMol < clusters [iCluster].size(); iMol++) {
          whichCluster [ clusters [iCluster] [iMol] ] = clusterIds [iCluster];
@@ -173,66 +163,59 @@ void clusterInfo::readStep (std::istream& in, int cutoff_U)
 
    // Assert iCluster is equal to nClusters
    if (iCluster != nClusters) {
-      std::cout << "Read file error: iCluster is not equal to nCluster" << std::endl;
+      std::cout << "iCluster is not equal to nCluster" << std::endl;
    }
 
-   // Orgainze the clusters so as to have clusters[0] have a list of molecules
+   // orgainze the clusters so as to have clusters[0] have a list of molecules
    // in clusters having aggregation number less than equal to a cutoff
-   organize (clustersRead, cutoff_U);
+   //organize (clustersRead, cutoff_U);
 
    // Setting the DArray which cluster.
    // Will be used in mapping
    // Assumes it has already been allocated
-   for (int iMol = 0; iMol < melt.size(); iMol++) {
-      whichCluster [ melt [iMol] ] = 0;
-   }
    for (int iCluster = 0; iCluster < nClusters; iCluster++) {
       for (int iMol = 0; iMol < clusters [iCluster].size(); iMol++) {
          whichCluster [ clusters [iCluster] [iMol] ] = clusterIds [iCluster]; 
       }
    }
-
 }
 
-void clusterInfo::organize (std::vector< std::vector<int > > clustersRead, int cutoff_U)
+void organize (std::vector< std::vector<int > > clustersRead, int cutoff_U)
 {
-   // Change nClusters
-   // Have clusterIds go from 0 - (nClusters-1)
-  
-   for (int iCluster = 0; iCluster < clustersRead.size(); iCluster++) {
-      if (clustersRead [iCluster].size() <= cutoff_U) {
-         melt.insert (melt.end(), clustersRead[iCluster].begin(), 
-                                clustersRead[iCluster].end());
-      }
-      else {
-         clusters.push_back(clustersRead[iCluster]);
-      }
-   }
-
-   // Resetting nClusters after organizing
-   nClusters = clusters.size();
-
-   for (int iCluster = 0; iCluster < nClusters; iCluster++) {
-      clusterIds.push_back (iCluster + 1);     
-   }
+//   // Initialize the first element as -1 and then delete it after reorganizing
+//   // Change nClusters
+//   // Have clusterIds go from 0 - (nClusters-1)
+//   
+//   // Will be deleted after reorganizing
+     clusters [0][0] = -1;
+// 
+//   for (int iCluster = 0; iCluster < clustersRead.size(); iCluster++) {
+//      if (clustersRead [iCluster].size() <= cutoff_U) {
+//         //clusters[0].insert (clusters[0].end(), clustersRead[iCluster].begin(), 
+//         //                       clustersRead[iCluster].end());
+//      }
+//      else {
+//         clusters.push_back(clustersRead[iCluster]);
+//      }
+//   }
+//
+//   //clusters[0].erase(0);
+//
+//   // Resetting nClusters after organizing
+//   nClusters = clusters.size();
+//
+//   for (int iCluster = 0; iCluster < nClusters; iCluster++) {
+//      clusterIds.push_back (iCluster);     
+//   }
 }
 
 void clusterInfo::writeStep (std::ostream& out)
 {
-   // Printing the molecules making up the melt
-   out << "0" << "  ";
-   out << "(" << melt.size() << ")" << "\t";
-   for (int iMol = 0; iMol < melt.size(); iMol++) {
-      out << melt.at(iMol) << "  ";
-   }
-   out << "\n";
-
-   // Printing whole clusters
    for (int iCluster = 0; iCluster < nClusters; iCluster++) {
-      out << clusterIds [iCluster] << "  ";
+      out << clusterIds [iCluster] << "\t";
       out << "(" << clusters [iCluster].size() << ")" << "\t";
       for (int iMol = 0; iMol < clusters [iCluster].size(); iMol++) {
-         out << clusters [iCluster].at(iMol) << "  ";
+         out << clusters [iCluster].at(iMol) << "\t";
       }
       out << "\n";
    }   
@@ -244,7 +227,6 @@ void clusterInfo::clear()
       clusters [iCluster].clear();
    }
    clusters.clear();
-   melt.clear();
    clusterIds.clear();
 
    nClusters = -1;
@@ -253,10 +235,11 @@ void clusterInfo::clear()
 void clusterInfo::updateClusterId (int prevId, int newId)
 {
    // Relies on the fact that before updating the clusterIds, the clusterIds
-   // will range from 1 - (nClusters). 
-   // So the prevId will be present at index (prevId-1)
+   // will range from 0 - (nClusters-1). So the prevID will be a number in this
+   // range directly equal to the vector index.
+   //
    // Updating: clusterIds, whichCluster 
-   clusterIds [prevId - 1] = newId;
+   clusterIds [prevId] = newId;
    for (int iMol = 0; iMol < nMolecules; iMol++) {
       if (whichCluster [iMol] == prevId) {
          whichCluster [iMol] = newId;
