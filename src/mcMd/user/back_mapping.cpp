@@ -256,26 +256,79 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
    int countUnprocessed0 = 0;
    int countUnprocessed1 = 0;
 
-   for (int iCluster = 0; iCluster < nClusters0; iCluster++) {
-      if (processed0 [iCluster] == 0) {
-         countUnprocessed0++;
+
+
+
+
+
+
+   // Chain insertion events at step1
+   
+   // Reset max and sum at the end of this loop
+   for (int iCluster = 0; iCluster < (step1->nClusters); iCluster++) {
+      for (int iMol = 0; iMol < (step1->clusters) [iCluster].size(); iMol++) {
+         selectMol = (step1->clusters) [iCluster] [iMol];
+         contribution0[step0->whichCluster[selectMol]]++;
+         sum0++;
+         if (contribution0[step0->whichCluster[selectMol]] > max0) {
+            max0 = contribution0[step0->whichCluster[selectMol]];
+            index0 = step0->whichCluster[selectMol];
+         }
       }
-   }
-   for (int iCluster = 0; iCluster < nClusters1; iCluster++) {
-      if (processed1 [iCluster] == 0) {
-         countUnprocessed1++;
-      }   
+      if (((double)max0/(double)sum0) >= cutoff_P) {
+
+         /* Need to have a check over here to see if it is 
+          * not a fission event. In a fission event, micelle 
+          * at step0 will split and form two or more micelles 
+          * at step1. Both of these micelles at step1 will 
+          * show the same step0 micelle having the dominant 
+          * contribution (and hence clearing the cutoff). 
+          * However, such a problem would not arise in a fusion
+          * event. In a fusion event, two or more micelles at 
+          * step0 would make up a single micelle at step1. This
+          * would result in that micelle not satisfying the 
+          * above condition on contribution. The micelles at 
+          * step0 would have approximately equal contributions
+          * to the micelle at step1 (e.g. a contribution of 
+          * about 50% is expected, from each of the micelles at
+          * step0, if two micelles at step0 form a micelle at 
+          * step1).
+          */ 
+
+
+         if (index0 != 0) {
+            // index0 - 1 because DArray index 0 represents the melt
+            // Therefore the clusters start from DArray index 1
+            step1->updateClusterId(step1->clusterIds [iCluster], step0->clusterIds[(index0-1)]);
+            out << "Chain Insertion :" << "\t" ;
+            for (int i = 0; i < size0; i++) {
+               if (i!=index0) {
+                  out << "(" << contribution0[i] << ")" << "   " << i << "->" <<index0;
+                  out << std::endl;
+                  out << "                 " << "\t"; 
+               }
+            }
+            out << std::endl;
+         }
+         else {
+            // Will have to max Cluster ID
+            // Identify the stepwise association process
+            step0->maxClusterId++;
+            step1->updateClusterId(step1->clusterIds [iCluster], step0->maxClusterId);
+            out << "Unimers associated to form micelle " << step0->maxClusterId << std::endl;
+         }
+      }
+      else {
+         // Put code here to identify fusion
+         // Idnetify fission using a different technique
+         // Will have to update maxClusterId over here
+
+      }
+      reinitializeArray (&contribution0, size0);
+      max0 = -1;
+      sum0 = 0;
    }
 
-   if (countUnprocessed0 != countUnprocessed1) {
-      std::cout<<"Algorithmic error: unequal unprocessed clusters"
-                  <<" after processing birth and death"<<std::endl;
-      std::cout<<"Step0 has "<<countUnprocessed0<<std::endl;
-      std::cout<<"Step1 has "<<countUnprocessed1<<std::endl;
-   }
-   else {
-      std::cout<<"Yahoo..."<<std::endl;
-   }
 
 }
 

@@ -1,10 +1,16 @@
 #ifndef MAPPING_H
 #define MAPPING_H
 
+#include <util/containers/DArray.h> 
+#include <vector>
+
+namespace Util {template <typename Data> class DArray;}
+
 class clusterInfo;
 
-void mapping (clusterInfo* step0, clusterInfo* step1, int cutoff_U, double cutoff_C);
+void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cutoff_F, 
+              std::vector<int> * tally, std::ostream& out);
 
-
+void reinitializeArray (Util::DArray <double> * in, int size);
 
 #endif

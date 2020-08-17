@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <vector>
 
 using namespace std;
 using namespace Util;
@@ -19,14 +20,21 @@ int main (){
    *  Start: int (t0)
    *  Increment: int (del_T)
    *  Final: int (tf)
-   *  cutoff unimers: int (cutoff to allocate the cluster to the set of unimers)
-   *  cutoff combine: double (cutoff to identify fision and fusion processes)
+   *  Cutoff unimers: int (cutoff to allocate the cluster to the set of unimers)
+   *  Cutoff for preserved micelle: double (cutoff to identify if the micelle 
+   *                                        preserved its identity or not)
+   *  Cutoff for fission/fusion: double (cutoff to identify which of the micelles 
+   *                                     fused/split)                               
    */
+
+   // summary file outputs the all the dynamic processes taking place from the 
+   // previous time step -> next time step
  
    std::string l1 ("Input Prefix"); 
    std::string IPre;
    std::string l2 ("Output Prefix");
    std::string OPre;
+   std::string summary ("summary");
    std::string l3 ("Start");
    int T0;
    std::string l4 ("Increment");
@@ -35,8 +43,10 @@ int main (){
    int Tf;
    std::string l6 ("Cutoff unimers");
    int cutoff_U;
-   std::string l7 ("Cutoff combine");
-   double cutoff_C;
+   std::string l7 ("Cutoff for preserved micelle");
+   double cutoff_P;
+   std::string l8 ("Cutoff for fission/fusion");
+   double cutoff_F;
 
    // Reading commands file
    std::string line;
@@ -84,8 +94,14 @@ int main (){
       else if (head == l7) {
          std::getline(linestream, ParaInput);
          ParaInput.erase(0,1);
-         cutoff_C = stod (ParaInput);
-         std::cout<<l7<<": "<<cutoff_C<<std::endl;
+         cutoff_P = stod (ParaInput);
+         std::cout<<l7<<": "<<cutoff_P<<std::endl;
+      } 
+      else if (head == l8) {
+         std::getline(linestream, ParaInput);
+         ParaInput.erase(0,1);
+         cutoff_F = stod (ParaInput);
+         std::cout<<l8<<": "<<cutoff_F<<std::endl;
       }  
       else {
          std::cout << "Wrong input format"<<std::endl;
@@ -93,11 +109,27 @@ int main (){
 
    }
 
+   /* This vector will keep track of all the dynamic processes
+    * taking place in the micelles
+    * Index 0: Total chain insertion events
+    * Index 1: Total chain expulsion events
+    * Index 2: Total stepwise association events
+    * Index 3: Total stepwise dissociation events
+    * Index 4: Total fission events
+    * Index 5: Total fusion events
+    */
+   std::vector<int > tally;
+   // Initializing this vector to 0
+   for (int i = 0; i < 6; i++) {
+      tally.push_back (0);
+   }
+
    // Setting the file streams and cluster variables
    std::ifstream inFileName0 (IPre+to_string(T0));
    std::ifstream inFileName1 (IPre+to_string(T0+delT));
    std::ofstream outFileName0 (OPre+to_string(T0));
    std::ofstream outFileName1 (OPre+to_string(T0+delT));
+   std::ofstream outFileSummary (summary+to_string(T0+delT));
    clusterInfo step0;
    clusterInfo step1;
    clusterInfo temp;
@@ -113,7 +145,7 @@ int main (){
    step0.maxClusterId = step0.nClusters;
 
    // Add a MAPPING command over here
-   mapping (& step0, & step1, cutoff_U, cutoff_C);   
+    mapping (& step0, & step1, cutoff_P, cutoff_F, & tally, outFileSummary);   
  
    // Writing these timesteps to new output files
    step0.writeStep(outFileName0);
@@ -134,6 +166,7 @@ int main (){
       // Clearing the IO variables for step 1
       inFileName1.close();
       outFileName1.close();
+      outFileSummary.close();
 
       // Copying step1 to step0 after clearing step0.
       step0.clear();
@@ -143,12 +176,13 @@ int main (){
       // Reinitializing the IO variable
       inFileName1.open(IPre+to_string(iFile));
       outFileName1.open(OPre+to_string(iFile));
- 
+      outFileSummary.open(summary+to_string(iFile)); 
+
       // Reading the next cluster file
       step1.readStep(inFileName1, cutoff_U);
 
       // MAPPING from step0 to step1
-      mapping (& step0, & step1, cutoff_U, cutoff_C);
+      mapping (& step0, & step1, cutoff_P, cutoff_F, & tally, outFileSummary);
 
       // Writing the step1 file 
       step1.writeStep(outFileName1);

@@ -4,4 +4,5 @@ Start: 14990
 Increment: 1
 Final: 14999
 Cutoff unimers: 3
-Cutoff combine: 34.6
+Cutoff for preserved micelle: 0.6
+Cutoff for fission/fusion: 0.4
