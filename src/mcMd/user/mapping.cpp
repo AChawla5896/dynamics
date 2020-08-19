@@ -9,6 +9,14 @@
 
 using namespace Util;
 
+void maxId (clusterInfo* step0, clusterInfo* step1)
+{
+   if (step0->maxClusterId < step1->nClusters) {
+      step0->maxClusterId = step1->nClusters;
+   }
+}
+
+
 void reinitializeArray (DArray <double> * in, int size)
 {
    for (int i = 0; i < size; i++) {
@@ -54,7 +62,7 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
     * preserved. Checking this condition from 
     * step0 -> step1 is necessary. However, this condition
     * will also be verfied from step1 -> step0 just to be
-    * sure. Then by using the whichCluster Array we will 
+    * sure. Then by using the whichClusterId Array we will 
     * be able to identify the chain insertion/expulsion
     * events.
     */
@@ -130,6 +138,10 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
 
    // The selected molecule from the selected cluster
    int selectMol = -1;
+   // Cluster Id of the selected molecule at the other step
+   int ClusId = -5;
+   // Position in the DArray
+   int pos = -1;
    
    // This variable will be used to count the number of 
    // clusters involved in the fusion/fission process
@@ -138,13 +150,18 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
    // FIRST STEP: Identify fusion and stepwise association
    //
    for (int iCluster = 0; iCluster < nClusters1; iCluster++) {
+      std::cout<<"iCluster :"<<iCluster<<std::endl;
       for (int iMol = 0; iMol < (step1->clusters) [iCluster].size(); iMol++) {
          selectMol = (step1->clusters) [iCluster] [iMol];
-         contribution1 [step0->whichCluster[selectMol]]++;
+         ClusId = step0->whichClusterId[selectMol];
+         // Added one because position 0 represents melt over here
+         // and clusterIndex would return -1 for melt
+         pos = step0->clusterIndex(ClusId) + 1;
+         contribution1 [pos]++;
          sum1++;
-         if (contribution1 [step0->whichCluster[selectMol]] > max1) {
-            max1 = contribution1 [step0->whichCluster[selectMol]];
-            index1 [iCluster] = step0->whichCluster[selectMol];
+         if (contribution1 [pos] > max1) {
+            max1 = contribution1 [pos];
+            index1 [iCluster] = pos;
          } 
       }
       maxContribution1 [iCluster] = (double) max1/ (double) sum1;
@@ -154,20 +171,29 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
          for (int i = 0; i < nClusters0 + 1; i++) {
             contribution1 [i] = contribution1[i]/(double) sum1;
             if (contribution1 [i] >= cutoff_F) {
+               std::cout<<"A cluster satisfied fusion conditions"<<std::endl;
                if (i != 0) {
                   // These are the micelles which are fusing to form
                   // the micelle at step1.
                   processed0 [i - 1] = 1;
                   nDynamic++;
+                  std::cout<<"contribution1 :"<<contribution1 [i]<<std::endl;
+                  std::cout<<"Cluster id: "<<step0->clusterIds[i-1]<<std::endl;
+                  std::cout<<"nDynamic: "<<nDynamic<<std::endl;
                }
                else {
                   std::cout << "Algorithmic error: Micelle fusing with melt"
                                 << std::endl;
                }
             }
+            std::cout<<"contribution1 ["<<i<<"]"<<contribution1 [i]<<std::endl;
          }
          if (nDynamic >= 2) {
             step0->maxClusterId++;
+            std::cout<<"Max Cluster ID :"<<step0->maxClusterId<<std::endl;
+            std::cout<<"Final nDynamic: "<<nDynamic<<std::endl;
+            std::cout<<"Prev Id: "<<step1->clusterIds [iCluster]<<std::endl;
+            std::cout<<"New Id: "<<step0->maxClusterId<<std::endl;
             step1->updateClusterId(step1->clusterIds [iCluster], step0->maxClusterId);
             (* tally) [5]++; 
             processed1 [iCluster] = 1;
@@ -180,7 +206,13 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
       else {
          // Micelle forming from melt
          if (index1 [iCluster] == 0) {
+            std::cout<<"A cluster forming from the melt"<<std::endl;
             step0->maxClusterId++;
+            std::cout<<"Max Cluster ID :"<<step0->maxClusterId<<std::endl;
+            std::cout<<"Prev Id: "<<step1->clusterIds [iCluster]<<std::endl;
+            std::cout<<"New Id: "<<step0->maxClusterId<<std::endl;
+            std::cout<<"iCluster : "<<iCluster<<std::endl;
+            std::cout<<"Max contribution :"<<maxContribution1 [iCluster]<<std::endl;
             step1->updateClusterId(step1->clusterIds [iCluster], step0->maxClusterId);
             (* tally) [2]++; 
             processed1 [iCluster] = 1; 
@@ -197,30 +229,43 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
    //
    for (int iCluster = 0; iCluster < nClusters0; iCluster++) {
       if (processed0 [iCluster] == 0) {
+         std::cout<<"iCluster :"<<iCluster<<std::endl;
          for (int iMol = 0; iMol < (step0->clusters) [iCluster].size(); iMol++) {
             selectMol = (step0->clusters) [iCluster] [iMol];
-            contribution0 [step1->whichCluster[selectMol]]++;
+            ClusId = step1->whichClusterId[selectMol];
+            // Added one because position 0 represents melt over here
+            // and clusterIndex would return -1 for melt
+            pos = step1->clusterIndex(ClusId) + 1;
+            contribution0 [pos]++;
+            //std::cout<<"Here...iMol = "<<iMol<<std::endl;
+            //std::cout<<"step1->whichClusterId["<<selectMol<<"] ="<< step1->whichClusterId[selectMol] <<std::endl;
             sum0++;
-            if (contribution0 [step1->whichCluster[selectMol]] > max0) {
-               max0 = contribution0 [step1->whichCluster[selectMol]];
-               index0 [iCluster] = step1->whichCluster[selectMol];
+            if (contribution0 [pos] > max0) {
+               max0 = contribution0 [pos];
+               index0 [iCluster] = pos;
             }
          }
          maxContribution0 [iCluster] = (double) max0/ (double) sum0;
-
          // Identifying fission events
          if (maxContribution0 [iCluster] < cutoff_P) {
             for (int i = 0; i < nClusters1 + 1; i++) {
-               contribution0 [i] = contribution0[i]/(double) sum0;
+               contribution0 [i] = (double) contribution0[i]/(double) sum0;
                if (contribution0 [i] >= cutoff_F) {
+                  std::cout<<"A cluster satisfied fission conditions"<<std::endl;
                   // These are the micelles which are splitting to form
                   // the micelles at step 1
                   if (i != 0 ) {
                      processed1 [i - 1] = 1;
                      step0->maxClusterId++;
+                     std::cout<<"contribution0 :"<<contribution0 [i]<<std::endl;
+                     std::cout<<"Max Cluster ID :"<<step0->maxClusterId<<std::endl;
+                     std::cout<<"Cluster number: "<<i<<std::endl;
+                     std::cout<<"Prev Id: "<<step1->clusterIds [i-1]<<std::endl;
+                     std::cout<<"New Id: "<<step0->maxClusterId<<std::endl;
                      step1->updateClusterId(step1->clusterIds [i-1], step0->maxClusterId);
                      (* tally) [4]++;
                      nDynamic++;
+                     std::cout<<"nDynamic: "<<nDynamic<<std::endl;
                   }
                   else {
                      std::cout <<"Algorithmic error: Micelle splitting to melt"
@@ -241,6 +286,9 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
             if (index0 [iCluster] == 0) {
                (* tally) [3]++;
                processed0 [iCluster] = 1;
+               std::cout<<"Micelle dissociating into the melt"<<std::endl;
+               std::cout<<"clusterId :"<<step0->clusterIds[iCluster]<<std::endl;
+               std::cout<<"Max Contribution :"<<maxContribution0 [iCluster]<<std::endl ;
             }
          }
 
@@ -255,7 +303,13 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
    //
    int countUnprocessed0 = 0;
    int countUnprocessed1 = 0;
-
+ 
+   // These variables will be used when updating the clusterId at
+   // step1
+   int oldId = -1;
+   int newId = -1;
+   int temp = -1;
+ 
    for (int iCluster = 0; iCluster < nClusters0; iCluster++) {
       if (processed0 [iCluster] == 0) {
          countUnprocessed0++;
@@ -274,8 +328,46 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
       std::cout<<"Step1 has "<<countUnprocessed1<<std::endl;
    }
    else {
-      std::cout<<"Yahoo..."<<std::endl;
+      std::cout<<"Step0 has "<<countUnprocessed0<<std::endl;
+      std::cout<<"Step1 has "<<countUnprocessed1<<std::endl;
+
+      for (int iCluster = 0; iCluster < nClusters1; iCluster++) {
+         std::cout << "iCluster = "<< iCluster<<std::endl;
+         std::cout << "processed1 ["<<iCluster<<"] = "<<processed1 [iCluster]<<std::endl;
+         std::cout << "maxContribution1 ["<<iCluster<<"] = "<<maxContribution1 [iCluster]<<std::endl;
+         std::cout << "index1 = " << (index1 [iCluster]) <<std::endl;
+         if (processed1 [iCluster] == 0) {
+            if (maxContribution1 [iCluster] >= cutoff_P) {
+               oldId = step1->clusterIds[iCluster];
+               newId = step0->clusterIds[(index1 [iCluster] - 1)];
+               temp = step0->clusterIndex(newId);
+               std::cout<<"oldId_map =" <<oldId<<std::endl;
+               std::cout<<"newId_map =" <<newId<<std::endl;
+               std::cout<<"maxContribution0 ["<<temp<<"]"<<maxContribution0[temp]<<std::endl;
+               std::cout<<"index0 =" << index0[temp]<<std::endl;
+             //  if (index0 [step0->clusterIndex(newId)] == (iCluster+1)) {
+                  step1->updateClusterId(oldId, newId);
+                  processed1 [iCluster] = 1;
+                  processed0 [index1 [iCluster] - 1] = 1;
+             //  }
+             //  else {
+             //     std::cout<<"Algorithmic error: Id is not reversibly preserved"
+              //                 <<std::endl;
+              // }
+            }
+            else {
+               std::cout<<"Algorithmic error: Third step shows unpreserved cluster"
+                            <<std::endl;
+            }        
+         }
+      } 
    }
+
+
+   // Ensure that count unprocessed is zero for both
+
+   contribution0.deallocate();
+   contribution1.deallocate();
 
 }
 

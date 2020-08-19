@@ -8,9 +8,11 @@ namespace Util {template <typename Data> class DArray;}
 
 class clusterInfo;
 
-void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cutoff_F, 
-              std::vector<int> * tally, std::ostream& out);
+void maxId (clusterInfo* step0, clusterInfo* step1);
 
 void reinitializeArray (Util::DArray <double> * in, int size);
+
+void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cutoff_F, 
+              std::vector<int> * tally, std::ostream& out);
 
 #endif

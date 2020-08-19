@@ -32,6 +32,15 @@ class clusterInfo{
       // accordingly.
       void organize (std::vector< std::vector<int > > clustersRead, int cutoff_U);
 
+      // This function will be used to find the index of the given clusterId
+      // in the vector cluster Id
+      // During the mapping process (i.e. when the whole process is not 
+      // complete), it is possible that two clusters have the same cluster Ids.
+      // So an optional vector notAccept is also taken as an input. This vector
+      // would consist of the indices which are already processed and hence not 
+      // accepted as the correct output of the cluster Index function
+      int clusterIndex (int Id);
+
       void writeStep (std::ostream& out);
 
       // Will find the number of lines in the output file
@@ -69,7 +78,7 @@ class clusterInfo{
       // This size of this array needs to be equal to the number of molecules
       // Will be used to get the clusterId using the molecule
       // Size: nMolecules
-      DArray<int > whichCluster;
+      DArray<int > whichClusterId;
 
       // total number of clusters at that timestep (does not include melt),
       // Therefore, total number of clusters including melt will be 

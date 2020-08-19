@@ -1,0 +1,977 @@
+Input Prefix: in/cluster.clusters
+Output Prefix: out_BD/cluster.clusters
+Start: 14995
+Increment: 1
+Final: 14996
+Cutoff unimers: 15
+Cutoff for preserved micelle: 0.75
+Cutoff for fission/fusion: 0.25
+====================================
+iCluster :0
+iCluster :1
+iCluster :2
+contribution1 [0]0.00819672
+contribution1 [1]0
+contribution1 [2]0
+A cluster satisfied fusion conditions
+contribution1 :0.5
+Cluster id: 3
+nDynamic: 1
+contribution1 [3]0.5
+contribution1 [4]0
+contribution1 [5]0
+contribution1 [6]0
+contribution1 [7]0
+contribution1 [8]0
+contribution1 [9]0
+contribution1 [10]0
+contribution1 [11]0
+contribution1 [12]0
+contribution1 [13]0
+contribution1 [14]0
+contribution1 [15]0
+A cluster satisfied fusion conditions
+contribution1 :0.491803
+Cluster id: 16
+nDynamic: 2
+contribution1 [16]0.491803
+contribution1 [17]0
+contribution1 [18]0
+Max Cluster ID :19
+Final nDynamic: 2
+Prev Id: 3
+New Id: 19
+---------updating ID----------
+prevId In: 3
+newId In: 19
+Corresponding clusterId: 3
+------------------------------
+iCluster :3
+contribution1 [0]0
+contribution1 [1]0
+contribution1 [2]0
+contribution1 [3]0
+A cluster satisfied fusion conditions
+contribution1 :0.558559
+Cluster id: 4
+nDynamic: 1
+contribution1 [4]0.558559
+contribution1 [5]0
+contribution1 [6]0
+contribution1 [7]0
+contribution1 [8]0
+contribution1 [9]0
+contribution1 [10]0
+contribution1 [11]0
+contribution1 [12]0.00900901
+contribution1 [13]0
+A cluster satisfied fusion conditions
+contribution1 :0.432432
+Cluster id: 14
+nDynamic: 2
+contribution1 [14]0.432432
+contribution1 [15]0
+contribution1 [16]0
+contribution1 [17]0
+contribution1 [18]0
+Max Cluster ID :20
+Final nDynamic: 2
+Prev Id: 4
+New Id: 20
+---------updating ID----------
+prevId In: 4
+newId In: 20
+Corresponding clusterId: 4
+------------------------------
+iCluster :4
+iCluster :5
+iCluster :6
+iCluster :7
+iCluster :8
+iCluster :9
+iCluster :10
+iCluster :11
+iCluster :12
+iCluster :13
+iCluster :14
+iCluster :15
+iCluster :16
+iCluster :0
+iCluster :1
+A cluster satisfied fission conditions
+contribution0 :0.675159
+Max Cluster ID :21
+Cluster number: 2
+Prev Id: 2
+New Id: 21
+---------updating ID----------
+prevId In: 2
+newId In: 21
+Corresponding clusterId: 2
+------------------------------
+nDynamic: 1
+A cluster satisfied fission conditions
+contribution0 :0.305732
+Max Cluster ID :22
+Cluster number: 14
+Prev Id: 14
+New Id: 22
+---------updating ID----------
+prevId In: 14
+newId In: 22
+Corresponding clusterId: 14
+------------------------------
+nDynamic: 2
+iCluster :4
+iCluster :5
+iCluster :6
+iCluster :7
+iCluster :8
+iCluster :9
+iCluster :10
+iCluster :11
+iCluster :12
+iCluster :14
+iCluster :16
+iCluster :17
+Step0 has 13
+Step1 has 13
+iCluster = 0
+processed1 [0] = 0
+maxContribution1 [0] = 1
+index1 = 1
+oldId_map =1
+newId_map =1
+maxContribution0 [0]0.985294
+index0 =1
+---------updating ID----------
+prevId In: 1
+newId In: 1
+Corresponding clusterId: 1
+------------------------------
+iCluster = 1
+processed1 [1] = 1
+maxContribution1 [1] = 1
+index1 = 2
+iCluster = 2
+processed1 [2] = 1
+maxContribution1 [2] = 0.5
+index1 = 3
+iCluster = 3
+processed1 [3] = 1
+maxContribution1 [3] = 0.558559
+index1 = 4
+iCluster = 4
+processed1 [4] = 0
+maxContribution1 [4] = 0.987654
+index1 = 5
+oldId_map =5
+newId_map =5
+maxContribution0 [4]1
+index0 =5
+---------updating ID----------
+prevId In: 5
+newId In: 5
+Corresponding clusterId: 5
+------------------------------
+iCluster = 5
+processed1 [5] = 0
+maxContribution1 [5] = 0.986111
+index1 = 6
+oldId_map =6
+newId_map =6
+maxContribution0 [5]1
+index0 =6
+---------updating ID----------
+prevId In: 6
+newId In: 6
+Corresponding clusterId: 6
+------------------------------
+iCluster = 6
+processed1 [6] = 0
+maxContribution1 [6] = 0.987805
+index1 = 7
+oldId_map =7
+newId_map =7
+maxContribution0 [6]0.9
+index0 =7
+---------updating ID----------
+prevId In: 7
+newId In: 7
+Corresponding clusterId: 7
+------------------------------
+iCluster = 7
+processed1 [7] = 0
+maxContribution1 [7] = 1
+index1 = 8
+oldId_map =8
+newId_map =8
+maxContribution0 [7]1
+index0 =8
+---------updating ID----------
+prevId In: 8
+newId In: 8
+Corresponding clusterId: 8
+------------------------------
+iCluster = 8
+processed1 [8] = 0
+maxContribution1 [8] = 0.986486
+index1 = 9
+oldId_map =9
+newId_map =9
+maxContribution0 [8]0.986486
+index0 =9
+---------updating ID----------
+prevId In: 9
+newId In: 9
+Corresponding clusterId: 9
+------------------------------
+iCluster = 9
+processed1 [9] = 0
+maxContribution1 [9] = 0.987179
+index1 = 10
+oldId_map =10
+newId_map =10
+maxContribution0 [9]1
+index0 =10
+---------updating ID----------
+prevId In: 10
+newId In: 10
+Corresponding clusterId: 10
+------------------------------
+iCluster = 10
+processed1 [10] = 0
+maxContribution1 [10] = 1
+index1 = 11
+oldId_map =11
+newId_map =11
+maxContribution0 [10]0.977011
+index0 =11
+---------updating ID----------
+prevId In: 11
+newId In: 11
+Corresponding clusterId: 11
+------------------------------
+iCluster = 11
+processed1 [11] = 0
+maxContribution1 [11] = 0.980769
+index1 = 12
+oldId_map =12
+newId_map =12
+maxContribution0 [11]0.944444
+index0 =12
+---------updating ID----------
+prevId In: 12
+newId In: 12
+Corresponding clusterId: 12
+------------------------------
+iCluster = 12
+processed1 [12] = 0
+maxContribution1 [12] = 0.974026
+index1 = 13
+oldId_map =13
+newId_map =13
+maxContribution0 [12]1
+index0 =13
+---------updating ID----------
+prevId In: 13
+newId In: 13
+Corresponding clusterId: 13
+------------------------------
+iCluster = 13
+processed1 [13] = 1
+maxContribution1 [13] = 1
+index1 = 2
+iCluster = 14
+processed1 [14] = 0
+maxContribution1 [14] = 0.969697
+index1 = 15
+oldId_map =15
+newId_map =15
+maxContribution0 [14]0.969697
+index0 =15
+---------updating ID----------
+prevId In: 15
+newId In: 15
+Corresponding clusterId: 15
+------------------------------
+iCluster = 15
+processed1 [15] = 0
+maxContribution1 [15] = 1
+index1 = 17
+oldId_map =16
+newId_map =17
+maxContribution0 [16]1
+index0 =16
+---------updating ID----------
+prevId In: 16
+newId In: 17
+Corresponding clusterId: 16
+------------------------------
+iCluster = 16
+processed1 [16] = 0
+maxContribution1 [16] = 0.891892
+index1 = 18
+oldId_map =17
+newId_map =18
+maxContribution0 [17]0.942857
+index0 =17
+---------updating ID----------
+prevId In: 17
+newId In: 18
+Corresponding clusterId: 17
+------------------------------
+***********Writing************
+max = 18
+clusterIds [0] = 1
+value = 1
+clusterIds [1] = 2
+value = 1
+clusterIds [2] = 3
+value = 1
+clusterIds [3] = 4
+value = 1
+clusterIds [4] = 5
+value = 1
+clusterIds [5] = 6
+value = 1
+clusterIds [6] = 7
+value = 1
+clusterIds [7] = 8
+value = 1
+clusterIds [8] = 9
+value = 1
+clusterIds [9] = 10
+value = 1
+clusterIds [10] = 11
+value = 1
+clusterIds [11] = 12
+value = 1
+clusterIds [12] = 13
+value = 1
+clusterIds [13] = 14
+value = 1
+clusterIds [14] = 15
+value = 1
+clusterIds [15] = 16
+value = 1
+clusterIds [16] = 17
+value = 1
+clusterIds [17] = 18
+value = 1
+clusterIds [1] = 2
+value = 2
+clusterIds [2] = 3
+value = 2
+clusterIds [3] = 4
+value = 2
+clusterIds [4] = 5
+value = 2
+clusterIds [5] = 6
+value = 2
+clusterIds [6] = 7
+value = 2
+clusterIds [7] = 8
+value = 2
+clusterIds [8] = 9
+value = 2
+clusterIds [9] = 10
+value = 2
+clusterIds [10] = 11
+value = 2
+clusterIds [11] = 12
+value = 2
+clusterIds [12] = 13
+value = 2
+clusterIds [13] = 14
+value = 2
+clusterIds [14] = 15
+value = 2
+clusterIds [15] = 16
+value = 2
+clusterIds [16] = 17
+value = 2
+clusterIds [17] = 18
+value = 2
+clusterIds [2] = 3
+value = 3
+clusterIds [3] = 4
+value = 3
+clusterIds [4] = 5
+value = 3
+clusterIds [5] = 6
+value = 3
+clusterIds [6] = 7
+value = 3
+clusterIds [7] = 8
+value = 3
+clusterIds [8] = 9
+value = 3
+clusterIds [9] = 10
+value = 3
+clusterIds [10] = 11
+value = 3
+clusterIds [11] = 12
+value = 3
+clusterIds [12] = 13
+value = 3
+clusterIds [13] = 14
+value = 3
+clusterIds [14] = 15
+value = 3
+clusterIds [15] = 16
+value = 3
+clusterIds [16] = 17
+value = 3
+clusterIds [17] = 18
+value = 3
+clusterIds [3] = 4
+value = 4
+clusterIds [4] = 5
+value = 4
+clusterIds [5] = 6
+value = 4
+clusterIds [6] = 7
+value = 4
+clusterIds [7] = 8
+value = 4
+clusterIds [8] = 9
+value = 4
+clusterIds [9] = 10
+value = 4
+clusterIds [10] = 11
+value = 4
+clusterIds [11] = 12
+value = 4
+clusterIds [12] = 13
+value = 4
+clusterIds [13] = 14
+value = 4
+clusterIds [14] = 15
+value = 4
+clusterIds [15] = 16
+value = 4
+clusterIds [16] = 17
+value = 4
+clusterIds [17] = 18
+value = 4
+clusterIds [4] = 5
+value = 5
+clusterIds [5] = 6
+value = 5
+clusterIds [6] = 7
+value = 5
+clusterIds [7] = 8
+value = 5
+clusterIds [8] = 9
+value = 5
+clusterIds [9] = 10
+value = 5
+clusterIds [10] = 11
+value = 5
+clusterIds [11] = 12
+value = 5
+clusterIds [12] = 13
+value = 5
+clusterIds [13] = 14
+value = 5
+clusterIds [14] = 15
+value = 5
+clusterIds [15] = 16
+value = 5
+clusterIds [16] = 17
+value = 5
+clusterIds [17] = 18
+value = 5
+clusterIds [5] = 6
+value = 6
+clusterIds [6] = 7
+value = 6
+clusterIds [7] = 8
+value = 6
+clusterIds [8] = 9
+value = 6
+clusterIds [9] = 10
+value = 6
+clusterIds [10] = 11
+value = 6
+clusterIds [11] = 12
+value = 6
+clusterIds [12] = 13
+value = 6
+clusterIds [13] = 14
+value = 6
+clusterIds [14] = 15
+value = 6
+clusterIds [15] = 16
+value = 6
+clusterIds [16] = 17
+value = 6
+clusterIds [17] = 18
+value = 6
+clusterIds [6] = 7
+value = 7
+clusterIds [7] = 8
+value = 7
+clusterIds [8] = 9
+value = 7
+clusterIds [9] = 10
+value = 7
+clusterIds [10] = 11
+value = 7
+clusterIds [11] = 12
+value = 7
+clusterIds [12] = 13
+value = 7
+clusterIds [13] = 14
+value = 7
+clusterIds [14] = 15
+value = 7
+clusterIds [15] = 16
+value = 7
+clusterIds [16] = 17
+value = 7
+clusterIds [17] = 18
+value = 7
+clusterIds [7] = 8
+value = 8
+clusterIds [8] = 9
+value = 8
+clusterIds [9] = 10
+value = 8
+clusterIds [10] = 11
+value = 8
+clusterIds [11] = 12
+value = 8
+clusterIds [12] = 13
+value = 8
+clusterIds [13] = 14
+value = 8
+clusterIds [14] = 15
+value = 8
+clusterIds [15] = 16
+value = 8
+clusterIds [16] = 17
+value = 8
+clusterIds [17] = 18
+value = 8
+clusterIds [8] = 9
+value = 9
+clusterIds [9] = 10
+value = 9
+clusterIds [10] = 11
+value = 9
+clusterIds [11] = 12
+value = 9
+clusterIds [12] = 13
+value = 9
+clusterIds [13] = 14
+value = 9
+clusterIds [14] = 15
+value = 9
+clusterIds [15] = 16
+value = 9
+clusterIds [16] = 17
+value = 9
+clusterIds [17] = 18
+value = 9
+clusterIds [9] = 10
+value = 10
+clusterIds [10] = 11
+value = 10
+clusterIds [11] = 12
+value = 10
+clusterIds [12] = 13
+value = 10
+clusterIds [13] = 14
+value = 10
+clusterIds [14] = 15
+value = 10
+clusterIds [15] = 16
+value = 10
+clusterIds [16] = 17
+value = 10
+clusterIds [17] = 18
+value = 10
+clusterIds [10] = 11
+value = 11
+clusterIds [11] = 12
+value = 11
+clusterIds [12] = 13
+value = 11
+clusterIds [13] = 14
+value = 11
+clusterIds [14] = 15
+value = 11
+clusterIds [15] = 16
+value = 11
+clusterIds [16] = 17
+value = 11
+clusterIds [17] = 18
+value = 11
+clusterIds [11] = 12
+value = 12
+clusterIds [12] = 13
+value = 12
+clusterIds [13] = 14
+value = 12
+clusterIds [14] = 15
+value = 12
+clusterIds [15] = 16
+value = 12
+clusterIds [16] = 17
+value = 12
+clusterIds [17] = 18
+value = 12
+clusterIds [12] = 13
+value = 13
+clusterIds [13] = 14
+value = 13
+clusterIds [14] = 15
+value = 13
+clusterIds [15] = 16
+value = 13
+clusterIds [16] = 17
+value = 13
+clusterIds [17] = 18
+value = 13
+clusterIds [13] = 14
+value = 14
+clusterIds [14] = 15
+value = 14
+clusterIds [15] = 16
+value = 14
+clusterIds [16] = 17
+value = 14
+clusterIds [17] = 18
+value = 14
+clusterIds [14] = 15
+value = 15
+clusterIds [15] = 16
+value = 15
+clusterIds [16] = 17
+value = 15
+clusterIds [17] = 18
+value = 15
+clusterIds [15] = 16
+value = 16
+clusterIds [16] = 17
+value = 16
+clusterIds [17] = 18
+value = 16
+clusterIds [16] = 17
+value = 17
+clusterIds [17] = 18
+value = 17
+clusterIds [17] = 18
+value = 18
+***********Writing************
+max = 22
+clusterIds [0] = 1
+value = 1
+clusterIds [1] = 21
+value = 1
+clusterIds [2] = 19
+value = 1
+clusterIds [3] = 20
+value = 1
+clusterIds [4] = 5
+value = 1
+clusterIds [5] = 6
+value = 1
+clusterIds [6] = 7
+value = 1
+clusterIds [7] = 8
+value = 1
+clusterIds [8] = 9
+value = 1
+clusterIds [9] = 10
+value = 1
+clusterIds [10] = 11
+value = 1
+clusterIds [11] = 12
+value = 1
+clusterIds [12] = 13
+value = 1
+clusterIds [13] = 22
+value = 1
+clusterIds [14] = 15
+value = 1
+clusterIds [15] = 17
+value = 1
+clusterIds [16] = 18
+value = 1
+clusterIds [1] = 21
+value = 21
+clusterIds [2] = 19
+value = 19
+clusterIds [3] = 20
+value = 19
+clusterIds [4] = 5
+value = 5
+clusterIds [5] = 6
+value = 5
+clusterIds [6] = 7
+value = 5
+clusterIds [7] = 8
+value = 5
+clusterIds [8] = 9
+value = 5
+clusterIds [9] = 10
+value = 5
+clusterIds [10] = 11
+value = 5
+clusterIds [11] = 12
+value = 5
+clusterIds [12] = 13
+value = 5
+clusterIds [13] = 22
+value = 5
+clusterIds [14] = 15
+value = 5
+clusterIds [15] = 17
+value = 5
+clusterIds [16] = 18
+value = 5
+clusterIds [1] = 21
+value = 21
+clusterIds [2] = 19
+value = 19
+clusterIds [3] = 20
+value = 19
+clusterIds [5] = 6
+value = 6
+clusterIds [6] = 7
+value = 6
+clusterIds [7] = 8
+value = 6
+clusterIds [8] = 9
+value = 6
+clusterIds [9] = 10
+value = 6
+clusterIds [10] = 11
+value = 6
+clusterIds [11] = 12
+value = 6
+clusterIds [12] = 13
+value = 6
+clusterIds [13] = 22
+value = 6
+clusterIds [14] = 15
+value = 6
+clusterIds [15] = 17
+value = 6
+clusterIds [16] = 18
+value = 6
+clusterIds [1] = 21
+value = 21
+clusterIds [2] = 19
+value = 19
+clusterIds [3] = 20
+value = 19
+clusterIds [6] = 7
+value = 7
+clusterIds [7] = 8
+value = 7
+clusterIds [8] = 9
+value = 7
+clusterIds [9] = 10
+value = 7
+clusterIds [10] = 11
+value = 7
+clusterIds [11] = 12
+value = 7
+clusterIds [12] = 13
+value = 7
+clusterIds [13] = 22
+value = 7
+clusterIds [14] = 15
+value = 7
+clusterIds [15] = 17
+value = 7
+clusterIds [16] = 18
+value = 7
+clusterIds [1] = 21
+value = 21
+clusterIds [2] = 19
+value = 19
+clusterIds [3] = 20
+value = 19
+clusterIds [7] = 8
+value = 8
+clusterIds [8] = 9
+value = 8
+clusterIds [9] = 10
+value = 8
+clusterIds [10] = 11
+value = 8
+clusterIds [11] = 12
+value = 8
+clusterIds [12] = 13
+value = 8
+clusterIds [13] = 22
+value = 8
+clusterIds [14] = 15
+value = 8
+clusterIds [15] = 17
+value = 8
+clusterIds [16] = 18
+value = 8
+clusterIds [1] = 21
+value = 21
+clusterIds [2] = 19
+value = 19
+clusterIds [3] = 20
+value = 19
+clusterIds [8] = 9
+value = 9
+clusterIds [9] = 10
+value = 9
+clusterIds [10] = 11
+value = 9
+clusterIds [11] = 12
+value = 9
+clusterIds [12] = 13
+value = 9
+clusterIds [13] = 22
+value = 9
+clusterIds [14] = 15
+value = 9
+clusterIds [15] = 17
+value = 9
+clusterIds [16] = 18
+value = 9
+clusterIds [1] = 21
+value = 21
+clusterIds [2] = 19
+value = 19
+clusterIds [3] = 20
+value = 19
+clusterIds [9] = 10
+value = 10
+clusterIds [10] = 11
+value = 10
+clusterIds [11] = 12
+value = 10
+clusterIds [12] = 13
+value = 10
+clusterIds [13] = 22
+value = 10
+clusterIds [14] = 15
+value = 10
+clusterIds [15] = 17
+value = 10
+clusterIds [16] = 18
+value = 10
+clusterIds [1] = 21
+value = 21
+clusterIds [2] = 19
+value = 19
+clusterIds [3] = 20
+value = 19
+clusterIds [10] = 11
+value = 11
+clusterIds [11] = 12
+value = 11
+clusterIds [12] = 13
+value = 11
+clusterIds [13] = 22
+value = 11
+clusterIds [14] = 15
+value = 11
+clusterIds [15] = 17
+value = 11
+clusterIds [16] = 18
+value = 11
+clusterIds [1] = 21
+value = 21
+clusterIds [2] = 19
+value = 19
+clusterIds [3] = 20
+value = 19
+clusterIds [11] = 12
+value = 12
+clusterIds [12] = 13
+value = 12
+clusterIds [13] = 22
+value = 12
+clusterIds [14] = 15
+value = 12
+clusterIds [15] = 17
+value = 12
+clusterIds [16] = 18
+value = 12
+clusterIds [1] = 21
+value = 21
+clusterIds [2] = 19
+value = 19
+clusterIds [3] = 20
+value = 19
+clusterIds [12] = 13
+value = 13
+clusterIds [13] = 22
+value = 13
+clusterIds [14] = 15
+value = 13
+clusterIds [15] = 17
+value = 13
+clusterIds [16] = 18
+value = 13
+clusterIds [1] = 21
+value = 21
+clusterIds [2] = 19
+value = 19
+clusterIds [3] = 20
+value = 19
+clusterIds [13] = 22
+value = 19
+clusterIds [14] = 15
+value = 15
+clusterIds [15] = 17
+value = 15
+clusterIds [16] = 18
+value = 15
+clusterIds [1] = 21
+value = 21
+clusterIds [2] = 19
+value = 19
+clusterIds [3] = 20
+value = 19
+clusterIds [13] = 22
+value = 19
+clusterIds [15] = 17
+value = 17
+clusterIds [16] = 18
+value = 17
+clusterIds [1] = 21
+value = 21
+clusterIds [2] = 19
+value = 19
+clusterIds [3] = 20
+value = 19
+clusterIds [13] = 22
+value = 19
+clusterIds [16] = 18
+value = 18
+clusterIds [1] = 21
+value = 21
+clusterIds [2] = 19
+value = 19
+clusterIds [3] = 20
+value = 19
+clusterIds [13] = 22
+value = 19
+clusterIds [1] = 21
+value = 21
+clusterIds [3] = 20
+value = 20
+clusterIds [13] = 22
+value = 20
+clusterIds [1] = 21
+value = 21
+clusterIds [13] = 22
+value = 21
+clusterIds [13] = 22
+value = 22
+Total samples analyzed: 2
+Is this it....?

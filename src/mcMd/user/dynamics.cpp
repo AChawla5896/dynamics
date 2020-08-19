@@ -109,6 +109,8 @@ int main (){
 
    }
 
+   std::cout<<"===================================="<<std::endl;
+
    /* This vector will keep track of all the dynamic processes
     * taking place in the micelles
     * Index 0: Total chain insertion events
@@ -132,8 +134,13 @@ int main (){
    std::ofstream outFileSummary (summary+to_string(T0+delT));
    clusterInfo step0;
    clusterInfo step1;
-   clusterInfo temp;
- 
+   clusterInfo* add0;
+   clusterInfo* add1;
+
+   // Associating pointers with the objects
+   add0 = &step0;
+   add1 = &step1; 
+
    /* Read the first two time steps using readStep0 so as to allocate 
    * the DArrays
    */
@@ -144,8 +151,11 @@ int main (){
    // After this it needs to be updated in the mapping function
    step0.maxClusterId = step0.nClusters;
 
+   // Checking if nClusters at step1 is greater than maxId set till now
+   //maxId (& step0, & step1);
+
    // Add a MAPPING command over here
-    mapping (& step0, & step1, cutoff_P, cutoff_F, & tally, outFileSummary);   
+   mapping (& step0, & step1, cutoff_P, cutoff_F, & tally, outFileSummary);   
  
    // Writing these timesteps to new output files
    step0.writeStep(outFileName0);
@@ -169,10 +179,10 @@ int main (){
       outFileSummary.close();
 
       // Copying step1 to step0 after clearing step0.
-      step0.clear();
-      step0 = step1;
+      step0 = *add1;
+      step1 = *add0;
       step1.clear();
-
+ 
       // Reinitializing the IO variable
       inFileName1.open(IPre+to_string(iFile));
       outFileName1.open(OPre+to_string(iFile));
@@ -181,11 +191,19 @@ int main (){
       // Reading the next cluster file
       step1.readStep(inFileName1, cutoff_U);
 
+      std::cout<<"************iFile : "<<iFile<<"*************"<<std::endl; 
+
+      // Checking if nClusters at step1 is greater than maxId set till now
+      //maxId (& step0, & step1);
+
       // MAPPING from step0 to step1
       mapping (& step0, & step1, cutoff_P, cutoff_F, & tally, outFileSummary);
 
       // Writing the step1 file 
       step1.writeStep(outFileName1);
+
+      add1 = &step1;
+      add0 = &step0;
 
       iSample++;
 
