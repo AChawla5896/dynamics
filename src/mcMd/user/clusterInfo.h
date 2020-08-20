@@ -18,8 +18,9 @@ class clusterInfo{
       // readStep0 function will also calculate the number of molecules 
       // in the simulation and return it. Thereafter, the DArray, 
       // whichCluster will be allocated. This needs to be called only
-      // once and in the beginning.
+      // once and in the beginning. 
       // After this only call readStep.
+      // This function also resets isProcessed
       // cutoff_U is required as a parameter so as to call oragnize.
       // See organize for its details. 
       void readStep0 (std::istream& in, int cutoff_U);
@@ -54,7 +55,8 @@ class clusterInfo{
 
       // Need to clear all the std::vectors after writing new cluster outputs
       // Do not clear the allocation of DArray (but can think of assingning 
-      // a random value). Call before you read next time step (to be safe).
+      // a random value).
+      // Call before you read next time step (to be safe).
       void clear();
 
       // Consists of all the information on clusters and comprising molecules
@@ -79,6 +81,13 @@ class clusterInfo{
       // Will be used to get the clusterId using the molecule
       // Size: nMolecules
       DArray<int > whichClusterId;
+
+      // This vector will keep track of the molecules which have had their 
+      // cluster Id updated.
+      // At the end of mapping all the molecules would have had their Id 
+      // updated.
+      // Size: nMolecules
+      DArray<bool > isProcessed;
 
       // total number of clusters at that timestep (does not include melt),
       // Therefore, total number of clusters including melt will be 

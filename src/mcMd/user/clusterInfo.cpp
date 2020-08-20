@@ -103,15 +103,18 @@ void clusterInfo::readStep0 (std::istream& in, int cutoff_U)
    // Incrementing because the numbering of molecules starts from 0
    nMolecules++;
    whichClusterId.allocate(nMolecules);
+   isProcessed.allocate(nMolecules);
  
    // Setting the DArray which cluster.
    // Will be used in mapping
    for (int iMol = 0; iMol < melt.size(); iMol++) {
       whichClusterId [ melt [iMol] ] = 0;
+      isProcessed [ melt [iMol] ] = 0;
    }
    for (int iCluster = 0; iCluster < nClusters; iCluster++) {
       for (int iMol = 0; iMol < clusters [iCluster].size(); iMol++) {
          whichClusterId [ clusters [iCluster] [iMol] ] = clusterIds [iCluster];
+         isProcessed [ clusters [iCluster] [iMol] ] = 0;
       }
    }
 }
@@ -186,10 +189,12 @@ void clusterInfo::readStep (std::istream& in, int cutoff_U)
    // Assumes it has already been allocated
    for (int iMol = 0; iMol < melt.size(); iMol++) {
       whichClusterId [ melt [iMol] ] = 0;
+      isProcessed [ melt [iMol] ] = 0;
    }
    for (int iCluster = 0; iCluster < nClusters; iCluster++) {
       for (int iMol = 0; iMol < clusters [iCluster].size(); iMol++) {
-         whichClusterId [ clusters [iCluster] [iMol] ] = clusterIds [iCluster]; 
+         whichClusterId [ clusters [iCluster] [iMol] ] = clusterIds [iCluster];
+         isProcessed [ clusters [iCluster] [iMol] ] = 0; 
       }
    }
 
@@ -260,7 +265,7 @@ void clusterInfo::writeStep (std::ostream& out)
    value = max;
 
    std::cout<<"***********Writing************"<<std::endl;
-   std::cout<<"max = "<<max<<std::endl; 
+//   std::cout<<"max = "<<max<<std::endl; 
 
    // Will check if the cluster has already been printed or not
    std::vector<bool > print;
@@ -273,11 +278,11 @@ void clusterInfo::writeStep (std::ostream& out)
    for (int iPrint = 0; iPrint < print.size(); iPrint++) {
       for (int iCluster = 0; iCluster < nClusters; iCluster++) {
          if (print [iCluster] == 0) {
-            std::cout<<"clusterIds ["<<iCluster<<"] = "<<clusterIds [iCluster]<<std::endl;
+  //          std::cout<<"clusterIds ["<<iCluster<<"] = "<<clusterIds [iCluster]<<std::endl;
             if (clusterIds [iCluster] <= value) {
                value = clusterIds [iCluster];
             }
-            std::cout<<"value = "<<value<<std::endl;
+  //          std::cout<<"value = "<<value<<std::endl;
          }
       } 
       index = clusterIndex (value);   
@@ -319,8 +324,11 @@ void clusterInfo::updateClusterId (int prevId, int newId)
    std::cout<<"Corresponding clusterId: "<<clusterIds [prevId - 1]<<std::endl;
    clusterIds [prevId - 1] = newId;
    for (int iMol = 0; iMol < nMolecules; iMol++) {
-      if (whichClusterId [iMol] == prevId) {
+      if (whichClusterId [iMol] == prevId && isProcessed [iMol] == 0) {
+//         std::cout<<"whichClusterId ["<<iMol<<"] = "<<whichClusterId [iMol]<<std::endl;
          whichClusterId [iMol] = newId;
+//         std::cout<<"whichClusterId ["<<iMol<<"] = "<<whichClusterId [iMol]<<std::endl;
+         isProcessed [iMol] = 1;
       }
    }    
    std::cout<<"------------------------------"<<std::endl;

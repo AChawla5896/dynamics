@@ -208,11 +208,11 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
          if (index1 [iCluster] == 0) {
             std::cout<<"A cluster forming from the melt"<<std::endl;
             step0->maxClusterId++;
-            std::cout<<"Max Cluster ID :"<<step0->maxClusterId<<std::endl;
-            std::cout<<"Prev Id: "<<step1->clusterIds [iCluster]<<std::endl;
-            std::cout<<"New Id: "<<step0->maxClusterId<<std::endl;
-            std::cout<<"iCluster : "<<iCluster<<std::endl;
-            std::cout<<"Max contribution :"<<maxContribution1 [iCluster]<<std::endl;
+     //       std::cout<<"Max Cluster ID :"<<step0->maxClusterId<<std::endl;
+     //       std::cout<<"Prev Id: "<<step1->clusterIds [iCluster]<<std::endl;
+    //        std::cout<<"New Id: "<<step0->maxClusterId<<std::endl;
+   //         std::cout<<"iCluster : "<<iCluster<<std::endl;
+    //        std::cout<<"Max contribution :"<<maxContribution1 [iCluster]<<std::endl;
             step1->updateClusterId(step1->clusterIds [iCluster], step0->maxClusterId);
             (* tally) [2]++; 
             processed1 [iCluster] = 1; 
@@ -287,8 +287,8 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
                (* tally) [3]++;
                processed0 [iCluster] = 1;
                std::cout<<"Micelle dissociating into the melt"<<std::endl;
-               std::cout<<"clusterId :"<<step0->clusterIds[iCluster]<<std::endl;
-               std::cout<<"Max Contribution :"<<maxContribution0 [iCluster]<<std::endl ;
+       //        std::cout<<"clusterId :"<<step0->clusterIds[iCluster]<<std::endl;
+       //        std::cout<<"Max Contribution :"<<maxContribution0 [iCluster]<<std::endl ;
             }
          }
 
@@ -332,28 +332,28 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
       std::cout<<"Step1 has "<<countUnprocessed1<<std::endl;
 
       for (int iCluster = 0; iCluster < nClusters1; iCluster++) {
-         std::cout << "iCluster = "<< iCluster<<std::endl;
-         std::cout << "processed1 ["<<iCluster<<"] = "<<processed1 [iCluster]<<std::endl;
-         std::cout << "maxContribution1 ["<<iCluster<<"] = "<<maxContribution1 [iCluster]<<std::endl;
-         std::cout << "index1 = " << (index1 [iCluster]) <<std::endl;
+         //std::cout << "iCluster = "<< iCluster<<std::endl;
+         //std::cout << "processed1 ["<<iCluster<<"] = "<<processed1 [iCluster]<<std::endl;
+         //std::cout << "maxContribution1 ["<<iCluster<<"] = "<<maxContribution1 [iCluster]<<std::endl;
+         //std::cout << "index1 = " << (index1 [iCluster]) <<std::endl;
          if (processed1 [iCluster] == 0) {
             if (maxContribution1 [iCluster] >= cutoff_P) {
                oldId = step1->clusterIds[iCluster];
                newId = step0->clusterIds[(index1 [iCluster] - 1)];
                temp = step0->clusterIndex(newId);
-               std::cout<<"oldId_map =" <<oldId<<std::endl;
-               std::cout<<"newId_map =" <<newId<<std::endl;
-               std::cout<<"maxContribution0 ["<<temp<<"]"<<maxContribution0[temp]<<std::endl;
-               std::cout<<"index0 =" << index0[temp]<<std::endl;
-             //  if (index0 [step0->clusterIndex(newId)] == (iCluster+1)) {
+           //    std::cout<<"oldId_map =" <<oldId<<std::endl;
+           //    std::cout<<"newId_map =" <<newId<<std::endl;
+           //    std::cout<<"maxContribution0 ["<<temp<<"]"<<maxContribution0[temp]<<std::endl;
+           //    std::cout<<"index0 =" << index0[temp]<<std::endl;
+               if (index0 [step0->clusterIndex(newId)] == (iCluster+1)) {
                   step1->updateClusterId(oldId, newId);
                   processed1 [iCluster] = 1;
                   processed0 [index1 [iCluster] - 1] = 1;
-             //  }
-             //  else {
-             //     std::cout<<"Algorithmic error: Id is not reversibly preserved"
-              //                 <<std::endl;
-              // }
+               }
+               else {
+                  std::cout<<"Algorithmic error: Id is not reversibly preserved"
+                               <<std::endl;
+               }
             }
             else {
                std::cout<<"Algorithmic error: Third step shows unpreserved cluster"

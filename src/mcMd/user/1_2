@@ -1,31 +1,1296 @@
 Input Prefix: in/cluster.clusters
-Output Prefix: out_BD/cluster.clusters
+Output Prefix: out/cluster.clusters
 Start: 14991
 Increment: 1
 Final: 14992
 Cutoff unimers: 15
 Cutoff for preserved micelle: 0.75
-Cutoff for fission/fusion: 0.25
+Cutoff for fission/fusion: 0.3
 ====================================
 iCluster :0
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
+pos :1
 iCluster :1
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
 iCluster :2
+pos :0
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
+pos :3
 iCluster :3
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
+pos :4
 iCluster :4
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
+pos :5
 iCluster :5
+pos :0
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
+pos :6
 iCluster :6
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
+pos :7
 iCluster :7
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
+pos :8
 iCluster :8
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
+pos :9
 iCluster :9
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
+pos :10
 iCluster :10
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
+pos :11
 iCluster :11
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
+pos :12
 iCluster :12
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
+pos :13
 iCluster :13
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
+pos :2
 iCluster :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
+pos :14
 iCluster :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
+pos :15
 iCluster :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
+pos :16
 iCluster :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
+pos :17
 iCluster :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
+pos :18
 iCluster :0
 iCluster :1
 A cluster satisfied fission conditions
@@ -301,7 +1566,729 @@ Corresponding clusterId: 19
 ------------------------------
 ***********Writing************
 max = 18
+clusterIds [0] = 1
+value = 1
+clusterIds [1] = 2
+value = 1
+clusterIds [2] = 3
+value = 1
+clusterIds [3] = 4
+value = 1
+clusterIds [4] = 5
+value = 1
+clusterIds [5] = 6
+value = 1
+clusterIds [6] = 7
+value = 1
+clusterIds [7] = 8
+value = 1
+clusterIds [8] = 9
+value = 1
+clusterIds [9] = 10
+value = 1
+clusterIds [10] = 11
+value = 1
+clusterIds [11] = 12
+value = 1
+clusterIds [12] = 13
+value = 1
+clusterIds [13] = 14
+value = 1
+clusterIds [14] = 15
+value = 1
+clusterIds [15] = 16
+value = 1
+clusterIds [16] = 17
+value = 1
+clusterIds [17] = 18
+value = 1
+clusterIds [1] = 2
+value = 2
+clusterIds [2] = 3
+value = 2
+clusterIds [3] = 4
+value = 2
+clusterIds [4] = 5
+value = 2
+clusterIds [5] = 6
+value = 2
+clusterIds [6] = 7
+value = 2
+clusterIds [7] = 8
+value = 2
+clusterIds [8] = 9
+value = 2
+clusterIds [9] = 10
+value = 2
+clusterIds [10] = 11
+value = 2
+clusterIds [11] = 12
+value = 2
+clusterIds [12] = 13
+value = 2
+clusterIds [13] = 14
+value = 2
+clusterIds [14] = 15
+value = 2
+clusterIds [15] = 16
+value = 2
+clusterIds [16] = 17
+value = 2
+clusterIds [17] = 18
+value = 2
+clusterIds [2] = 3
+value = 3
+clusterIds [3] = 4
+value = 3
+clusterIds [4] = 5
+value = 3
+clusterIds [5] = 6
+value = 3
+clusterIds [6] = 7
+value = 3
+clusterIds [7] = 8
+value = 3
+clusterIds [8] = 9
+value = 3
+clusterIds [9] = 10
+value = 3
+clusterIds [10] = 11
+value = 3
+clusterIds [11] = 12
+value = 3
+clusterIds [12] = 13
+value = 3
+clusterIds [13] = 14
+value = 3
+clusterIds [14] = 15
+value = 3
+clusterIds [15] = 16
+value = 3
+clusterIds [16] = 17
+value = 3
+clusterIds [17] = 18
+value = 3
+clusterIds [3] = 4
+value = 4
+clusterIds [4] = 5
+value = 4
+clusterIds [5] = 6
+value = 4
+clusterIds [6] = 7
+value = 4
+clusterIds [7] = 8
+value = 4
+clusterIds [8] = 9
+value = 4
+clusterIds [9] = 10
+value = 4
+clusterIds [10] = 11
+value = 4
+clusterIds [11] = 12
+value = 4
+clusterIds [12] = 13
+value = 4
+clusterIds [13] = 14
+value = 4
+clusterIds [14] = 15
+value = 4
+clusterIds [15] = 16
+value = 4
+clusterIds [16] = 17
+value = 4
+clusterIds [17] = 18
+value = 4
+clusterIds [4] = 5
+value = 5
+clusterIds [5] = 6
+value = 5
+clusterIds [6] = 7
+value = 5
+clusterIds [7] = 8
+value = 5
+clusterIds [8] = 9
+value = 5
+clusterIds [9] = 10
+value = 5
+clusterIds [10] = 11
+value = 5
+clusterIds [11] = 12
+value = 5
+clusterIds [12] = 13
+value = 5
+clusterIds [13] = 14
+value = 5
+clusterIds [14] = 15
+value = 5
+clusterIds [15] = 16
+value = 5
+clusterIds [16] = 17
+value = 5
+clusterIds [17] = 18
+value = 5
+clusterIds [5] = 6
+value = 6
+clusterIds [6] = 7
+value = 6
+clusterIds [7] = 8
+value = 6
+clusterIds [8] = 9
+value = 6
+clusterIds [9] = 10
+value = 6
+clusterIds [10] = 11
+value = 6
+clusterIds [11] = 12
+value = 6
+clusterIds [12] = 13
+value = 6
+clusterIds [13] = 14
+value = 6
+clusterIds [14] = 15
+value = 6
+clusterIds [15] = 16
+value = 6
+clusterIds [16] = 17
+value = 6
+clusterIds [17] = 18
+value = 6
+clusterIds [6] = 7
+value = 7
+clusterIds [7] = 8
+value = 7
+clusterIds [8] = 9
+value = 7
+clusterIds [9] = 10
+value = 7
+clusterIds [10] = 11
+value = 7
+clusterIds [11] = 12
+value = 7
+clusterIds [12] = 13
+value = 7
+clusterIds [13] = 14
+value = 7
+clusterIds [14] = 15
+value = 7
+clusterIds [15] = 16
+value = 7
+clusterIds [16] = 17
+value = 7
+clusterIds [17] = 18
+value = 7
+clusterIds [7] = 8
+value = 8
+clusterIds [8] = 9
+value = 8
+clusterIds [9] = 10
+value = 8
+clusterIds [10] = 11
+value = 8
+clusterIds [11] = 12
+value = 8
+clusterIds [12] = 13
+value = 8
+clusterIds [13] = 14
+value = 8
+clusterIds [14] = 15
+value = 8
+clusterIds [15] = 16
+value = 8
+clusterIds [16] = 17
+value = 8
+clusterIds [17] = 18
+value = 8
+clusterIds [8] = 9
+value = 9
+clusterIds [9] = 10
+value = 9
+clusterIds [10] = 11
+value = 9
+clusterIds [11] = 12
+value = 9
+clusterIds [12] = 13
+value = 9
+clusterIds [13] = 14
+value = 9
+clusterIds [14] = 15
+value = 9
+clusterIds [15] = 16
+value = 9
+clusterIds [16] = 17
+value = 9
+clusterIds [17] = 18
+value = 9
+clusterIds [9] = 10
+value = 10
+clusterIds [10] = 11
+value = 10
+clusterIds [11] = 12
+value = 10
+clusterIds [12] = 13
+value = 10
+clusterIds [13] = 14
+value = 10
+clusterIds [14] = 15
+value = 10
+clusterIds [15] = 16
+value = 10
+clusterIds [16] = 17
+value = 10
+clusterIds [17] = 18
+value = 10
+clusterIds [10] = 11
+value = 11
+clusterIds [11] = 12
+value = 11
+clusterIds [12] = 13
+value = 11
+clusterIds [13] = 14
+value = 11
+clusterIds [14] = 15
+value = 11
+clusterIds [15] = 16
+value = 11
+clusterIds [16] = 17
+value = 11
+clusterIds [17] = 18
+value = 11
+clusterIds [11] = 12
+value = 12
+clusterIds [12] = 13
+value = 12
+clusterIds [13] = 14
+value = 12
+clusterIds [14] = 15
+value = 12
+clusterIds [15] = 16
+value = 12
+clusterIds [16] = 17
+value = 12
+clusterIds [17] = 18
+value = 12
+clusterIds [12] = 13
+value = 13
+clusterIds [13] = 14
+value = 13
+clusterIds [14] = 15
+value = 13
+clusterIds [15] = 16
+value = 13
+clusterIds [16] = 17
+value = 13
+clusterIds [17] = 18
+value = 13
+clusterIds [13] = 14
+value = 14
+clusterIds [14] = 15
+value = 14
+clusterIds [15] = 16
+value = 14
+clusterIds [16] = 17
+value = 14
+clusterIds [17] = 18
+value = 14
+clusterIds [14] = 15
+value = 15
+clusterIds [15] = 16
+value = 15
+clusterIds [16] = 17
+value = 15
+clusterIds [17] = 18
+value = 15
+clusterIds [15] = 16
+value = 16
+clusterIds [16] = 17
+value = 16
+clusterIds [17] = 18
+value = 16
+clusterIds [16] = 17
+value = 17
+clusterIds [17] = 18
+value = 17
+clusterIds [17] = 18
+value = 18
 ***********Writing************
 max = 20
+clusterIds [0] = 1
+value = 1
+clusterIds [1] = 19
+value = 1
+clusterIds [2] = 3
+value = 1
+clusterIds [3] = 4
+value = 1
+clusterIds [4] = 5
+value = 1
+clusterIds [5] = 6
+value = 1
+clusterIds [6] = 7
+value = 1
+clusterIds [7] = 8
+value = 1
+clusterIds [8] = 9
+value = 1
+clusterIds [9] = 10
+value = 1
+clusterIds [10] = 11
+value = 1
+clusterIds [11] = 12
+value = 1
+clusterIds [12] = 13
+value = 1
+clusterIds [13] = 20
+value = 1
+clusterIds [14] = 14
+value = 1
+clusterIds [15] = 15
+value = 1
+clusterIds [16] = 16
+value = 1
+clusterIds [17] = 17
+value = 1
+clusterIds [18] = 18
+value = 1
+clusterIds [1] = 19
+value = 19
+clusterIds [2] = 3
+value = 3
+clusterIds [3] = 4
+value = 3
+clusterIds [4] = 5
+value = 3
+clusterIds [5] = 6
+value = 3
+clusterIds [6] = 7
+value = 3
+clusterIds [7] = 8
+value = 3
+clusterIds [8] = 9
+value = 3
+clusterIds [9] = 10
+value = 3
+clusterIds [10] = 11
+value = 3
+clusterIds [11] = 12
+value = 3
+clusterIds [12] = 13
+value = 3
+clusterIds [13] = 20
+value = 3
+clusterIds [14] = 14
+value = 3
+clusterIds [15] = 15
+value = 3
+clusterIds [16] = 16
+value = 3
+clusterIds [17] = 17
+value = 3
+clusterIds [18] = 18
+value = 3
+clusterIds [1] = 19
+value = 19
+clusterIds [3] = 4
+value = 4
+clusterIds [4] = 5
+value = 4
+clusterIds [5] = 6
+value = 4
+clusterIds [6] = 7
+value = 4
+clusterIds [7] = 8
+value = 4
+clusterIds [8] = 9
+value = 4
+clusterIds [9] = 10
+value = 4
+clusterIds [10] = 11
+value = 4
+clusterIds [11] = 12
+value = 4
+clusterIds [12] = 13
+value = 4
+clusterIds [13] = 20
+value = 4
+clusterIds [14] = 14
+value = 4
+clusterIds [15] = 15
+value = 4
+clusterIds [16] = 16
+value = 4
+clusterIds [17] = 17
+value = 4
+clusterIds [18] = 18
+value = 4
+clusterIds [1] = 19
+value = 19
+clusterIds [4] = 5
+value = 5
+clusterIds [5] = 6
+value = 5
+clusterIds [6] = 7
+value = 5
+clusterIds [7] = 8
+value = 5
+clusterIds [8] = 9
+value = 5
+clusterIds [9] = 10
+value = 5
+clusterIds [10] = 11
+value = 5
+clusterIds [11] = 12
+value = 5
+clusterIds [12] = 13
+value = 5
+clusterIds [13] = 20
+value = 5
+clusterIds [14] = 14
+value = 5
+clusterIds [15] = 15
+value = 5
+clusterIds [16] = 16
+value = 5
+clusterIds [17] = 17
+value = 5
+clusterIds [18] = 18
+value = 5
+clusterIds [1] = 19
+value = 19
+clusterIds [5] = 6
+value = 6
+clusterIds [6] = 7
+value = 6
+clusterIds [7] = 8
+value = 6
+clusterIds [8] = 9
+value = 6
+clusterIds [9] = 10
+value = 6
+clusterIds [10] = 11
+value = 6
+clusterIds [11] = 12
+value = 6
+clusterIds [12] = 13
+value = 6
+clusterIds [13] = 20
+value = 6
+clusterIds [14] = 14
+value = 6
+clusterIds [15] = 15
+value = 6
+clusterIds [16] = 16
+value = 6
+clusterIds [17] = 17
+value = 6
+clusterIds [18] = 18
+value = 6
+clusterIds [1] = 19
+value = 19
+clusterIds [6] = 7
+value = 7
+clusterIds [7] = 8
+value = 7
+clusterIds [8] = 9
+value = 7
+clusterIds [9] = 10
+value = 7
+clusterIds [10] = 11
+value = 7
+clusterIds [11] = 12
+value = 7
+clusterIds [12] = 13
+value = 7
+clusterIds [13] = 20
+value = 7
+clusterIds [14] = 14
+value = 7
+clusterIds [15] = 15
+value = 7
+clusterIds [16] = 16
+value = 7
+clusterIds [17] = 17
+value = 7
+clusterIds [18] = 18
+value = 7
+clusterIds [1] = 19
+value = 19
+clusterIds [7] = 8
+value = 8
+clusterIds [8] = 9
+value = 8
+clusterIds [9] = 10
+value = 8
+clusterIds [10] = 11
+value = 8
+clusterIds [11] = 12
+value = 8
+clusterIds [12] = 13
+value = 8
+clusterIds [13] = 20
+value = 8
+clusterIds [14] = 14
+value = 8
+clusterIds [15] = 15
+value = 8
+clusterIds [16] = 16
+value = 8
+clusterIds [17] = 17
+value = 8
+clusterIds [18] = 18
+value = 8
+clusterIds [1] = 19
+value = 19
+clusterIds [8] = 9
+value = 9
+clusterIds [9] = 10
+value = 9
+clusterIds [10] = 11
+value = 9
+clusterIds [11] = 12
+value = 9
+clusterIds [12] = 13
+value = 9
+clusterIds [13] = 20
+value = 9
+clusterIds [14] = 14
+value = 9
+clusterIds [15] = 15
+value = 9
+clusterIds [16] = 16
+value = 9
+clusterIds [17] = 17
+value = 9
+clusterIds [18] = 18
+value = 9
+clusterIds [1] = 19
+value = 19
+clusterIds [9] = 10
+value = 10
+clusterIds [10] = 11
+value = 10
+clusterIds [11] = 12
+value = 10
+clusterIds [12] = 13
+value = 10
+clusterIds [13] = 20
+value = 10
+clusterIds [14] = 14
+value = 10
+clusterIds [15] = 15
+value = 10
+clusterIds [16] = 16
+value = 10
+clusterIds [17] = 17
+value = 10
+clusterIds [18] = 18
+value = 10
+clusterIds [1] = 19
+value = 19
+clusterIds [10] = 11
+value = 11
+clusterIds [11] = 12
+value = 11
+clusterIds [12] = 13
+value = 11
+clusterIds [13] = 20
+value = 11
+clusterIds [14] = 14
+value = 11
+clusterIds [15] = 15
+value = 11
+clusterIds [16] = 16
+value = 11
+clusterIds [17] = 17
+value = 11
+clusterIds [18] = 18
+value = 11
+clusterIds [1] = 19
+value = 19
+clusterIds [11] = 12
+value = 12
+clusterIds [12] = 13
+value = 12
+clusterIds [13] = 20
+value = 12
+clusterIds [14] = 14
+value = 12
+clusterIds [15] = 15
+value = 12
+clusterIds [16] = 16
+value = 12
+clusterIds [17] = 17
+value = 12
+clusterIds [18] = 18
+value = 12
+clusterIds [1] = 19
+value = 19
+clusterIds [12] = 13
+value = 13
+clusterIds [13] = 20
+value = 13
+clusterIds [14] = 14
+value = 13
+clusterIds [15] = 15
+value = 13
+clusterIds [16] = 16
+value = 13
+clusterIds [17] = 17
+value = 13
+clusterIds [18] = 18
+value = 13
+clusterIds [1] = 19
+value = 19
+clusterIds [13] = 20
+value = 19
+clusterIds [14] = 14
+value = 14
+clusterIds [15] = 15
+value = 14
+clusterIds [16] = 16
+value = 14
+clusterIds [17] = 17
+value = 14
+clusterIds [18] = 18
+value = 14
+clusterIds [1] = 19
+value = 19
+clusterIds [13] = 20
+value = 19
+clusterIds [15] = 15
+value = 15
+clusterIds [16] = 16
+value = 15
+clusterIds [17] = 17
+value = 15
+clusterIds [18] = 18
+value = 15
+clusterIds [1] = 19
+value = 19
+clusterIds [13] = 20
+value = 19
+clusterIds [16] = 16
+value = 16
+clusterIds [17] = 17
+value = 16
+clusterIds [18] = 18
+value = 16
+clusterIds [1] = 19
+value = 19
+clusterIds [13] = 20
+value = 19
+clusterIds [17] = 17
+value = 17
+clusterIds [18] = 18
+value = 17
+clusterIds [1] = 19
+value = 19
+clusterIds [13] = 20
+value = 19
+clusterIds [18] = 18
+value = 18
+clusterIds [1] = 19
+value = 19
+clusterIds [13] = 20
+value = 19
+clusterIds [13] = 20
+value = 20
 Total samples analyzed: 2
 Is this it....?
