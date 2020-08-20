@@ -2,7 +2,7 @@ Input Prefix: in/cluster.clusters
 Output Prefix: out_BD/cluster.clusters
 Start: 14990
 Increment: 1
-Final: 14999
+Final: 14997
 Cutoff unimers: 15
 Cutoff for preserved micelle: 0.80
 Cutoff for fission/fusion: 0.20

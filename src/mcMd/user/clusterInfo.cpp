@@ -264,7 +264,7 @@ void clusterInfo::writeStep (std::ostream& out)
    max = * (std::max_element(clusterIds.begin(), clusterIds.end()));
    value = max;
 
-   std::cout<<"***********Writing************"<<std::endl;
+//   std::cout<<"***********Writing************"<<std::endl;
 //   std::cout<<"max = "<<max<<std::endl; 
 
    // Will check if the cluster has already been printed or not
@@ -316,12 +316,12 @@ void clusterInfo::updateClusterId (int prevId, int newId)
    // So the prevId will be present at index (prevId-1)
    // Updating: clusterIds, whichClusterId
    
-   std::cout<<"---------updating ID----------"<<std::endl;
-   std::cout<<"prevId In: "<<prevId<<std::endl;
-   std::cout<<"newId In: "<<newId<<std::endl;
+//   std::cout<<"---------updating ID----------"<<std::endl;
+//   std::cout<<"prevId In: "<<prevId<<std::endl;
+//   std::cout<<"newId In: "<<newId<<std::endl;
 
  
-   std::cout<<"Corresponding clusterId: "<<clusterIds [prevId - 1]<<std::endl;
+//   std::cout<<"Corresponding clusterId: "<<clusterIds [prevId - 1]<<std::endl;
    clusterIds [prevId - 1] = newId;
    for (int iMol = 0; iMol < nMolecules; iMol++) {
       if (whichClusterId [iMol] == prevId && isProcessed [iMol] == 0) {
@@ -331,7 +331,7 @@ void clusterInfo::updateClusterId (int prevId, int newId)
          isProcessed [iMol] = 1;
       }
    }    
-   std::cout<<"------------------------------"<<std::endl;
+//   std::cout<<"------------------------------"<<std::endl;
 }
 
 void clusterInfo::countLines (std::istream& in)

@@ -2,6 +2,7 @@
 #include "mcMd/user/mapping.h"
 
 #include <iostream>
+#include <iomanip> 
 #include <fstream>
 #include <string>
 #include <sstream>
@@ -34,7 +35,6 @@ int main (){
    std::string IPre;
    std::string l2 ("Output Prefix");
    std::string OPre;
-   std::string summary ("summary");
    std::string l3 ("Start");
    int T0;
    std::string l4 ("Increment");
@@ -109,7 +109,7 @@ int main (){
 
    }
 
-   std::cout<<"===================================="<<std::endl;
+   std::cout<<"======================================"<<std::endl;
 
    /* This vector will keep track of all the dynamic processes
     * taking place in the micelles
@@ -120,18 +120,20 @@ int main (){
     * Index 4: Total fission events
     * Index 5: Total fusion events
     */
-   std::vector<int > tally;
+   std::vector<double > tally;
    // Initializing this vector to 0
    for (int i = 0; i < 6; i++) {
       tally.push_back (0);
    }
+
+   int iSample = 1;
 
    // Setting the file streams and cluster variables
    std::ifstream inFileName0 (IPre+to_string(T0));
    std::ifstream inFileName1 (IPre+to_string(T0+delT));
    std::ofstream outFileName0 (OPre+to_string(T0));
    std::ofstream outFileName1 (OPre+to_string(T0+delT));
-   std::ofstream outFileSummary (summary+to_string(T0+delT));
+   std::ofstream summary ("summary");
    clusterInfo step0;
    clusterInfo step1;
    clusterInfo* add0;
@@ -152,15 +154,19 @@ int main (){
    step0.maxClusterId = step0.nClusters;
 
    // Checking if nClusters at step1 is greater than maxId set till now
-   //maxId (& step0, & step1);
+   maxId (& step0, & step1);
+
+   summary<<"SAMPLE : "<<iSample<<std::endl<<std::endl;
 
    // Add a MAPPING command over here
-   mapping (& step0, & step1, cutoff_P, cutoff_F, & tally, outFileSummary);   
+   mapping (& step0, & step1, cutoff_P, cutoff_F, & tally, summary);   
  
    // Writing these timesteps to new output files
    step0.writeStep(outFileName0);
    step1.writeStep(outFileName1);
    
+   summary<<std::endl<<std::endl; 
+
    // Clearing the input and output streams for step0. Reinitialize 
    // using the open function of these streams.
    inFileName0.close(); 
@@ -169,14 +175,13 @@ int main (){
    // iFile is the string that needs to be appended to the filename
    // iSample is the number of samples that have been analyzed
    // 2 files have already been mapped using readStep0
-   int iSample = 2;
+   iSample++;
 
    for (int iFile = (T0+(2*delT)); iFile <= Tf; iFile+=delT) {
 
       // Clearing the IO variables for step 1
       inFileName1.close();
       outFileName1.close();
-      outFileSummary.close();
 
       // Copying step1 to step0 after clearing step0.
       step0 = *add1;
@@ -186,7 +191,8 @@ int main (){
       // Reinitializing the IO variable
       inFileName1.open(IPre+to_string(iFile));
       outFileName1.open(OPre+to_string(iFile));
-      outFileSummary.open(summary+to_string(iFile)); 
+      summary<<"SAMPLE : "<<iSample<<std::endl;
+      summary<<std::endl;
 
       // Reading the next cluster file
       step1.readStep(inFileName1, cutoff_U);
@@ -194,13 +200,14 @@ int main (){
       std::cout<<"************iFile : "<<iFile<<"*************"<<std::endl; 
 
       // Checking if nClusters at step1 is greater than maxId set till now
-      //maxId (& step0, & step1);
+      maxId (& step0, & step1);
 
       // MAPPING from step0 to step1
-      mapping (& step0, & step1, cutoff_P, cutoff_F, & tally, outFileSummary);
+      mapping (& step0, & step1, cutoff_P, cutoff_F, & tally, summary);
 
       // Writing the step1 file 
       step1.writeStep(outFileName1);
+      summary<<std::endl<<std::endl;
 
       add1 = &step1;
       add0 = &step0;
@@ -209,9 +216,25 @@ int main (){
 
    }
 
+   std::cout<<"======================================"<<std::endl;
    std::cout<<"Total samples analyzed: " << iSample << std::endl;
-   
-   std::cout<<"Is this it....?"<< std::endl;
+ 
+   std::cout<<std::endl<<"Thank you.....Have a nice day....:D";
+ 
+   summary<<"============================================="<<std::endl<<std::endl;
+   summary<<"Total samples analyzed: " << iSample << std::endl;
+
+   for (int i = 0; i < tally.size(); i++) {
+      tally [i] = tally[i]/((double)iSample-1.0);
+   } 
+   summary<<"Chain insertion events per step : "<< tally [0] << setprecision(8) << std::endl;
+   summary<<"Chain expulsion events per step : "<< tally [1] << setprecision(8) << std::endl;
+   summary<<"Stepwise association events per step : "<< tally [2] << setprecision(8) << std::endl;
+   summary<<"Stepwise dissociation events per step : "<< tally [3] << setprecision(8) << std::endl;
+   summary<<"Fission events per step : "<< tally [4] << setprecision(8) << std::endl;
+   summary<<"Fusion events per step : "<< tally [5] << setprecision(8) << std::endl;
+ 
+   //std::cout<<"Is this it....?"<< std::endl;
 
 
    // Do the initial allocation of maxClusterId using the nClusters after

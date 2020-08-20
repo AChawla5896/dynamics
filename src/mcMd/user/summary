@@ -1,0 +1,436 @@
+SAMPLE : 1
+
+Fusion: 2  13  = 20
+Chain Expulsion : 1268	3 -> 0
+                  649	3 -> 0
+                  1229	3 -> 0
+                  
+Chain Insertion : 1336	0 -> 4
+                  
+Chain Expulsion : 335	4 -> 0
+                  
+Chain Expulsion : 220	5 -> 0
+                  
+Chain Expulsion : 860	6 -> 0
+                  8	6 -> 0
+                  1280	6 -> 0
+                  871	6 -> 0
+                  824	6 -> 0
+                  442	6 -> 0
+                  138	6 -> 0
+                  792	6 -> 0
+                  1346	6 -> 0
+                  1171	6 -> 0
+                  564	6 -> 0
+                  339	6 -> 0
+                  1271	6 -> 0
+                  
+Chain Insertion : 441	0 -> 7
+                  
+Chain Insertion : 1206	0 -> 8
+                  
+Chain Expulsion : 438	8 -> 0
+                  433	8 -> 0
+                  
+Chain Expulsion : 101	9 -> 0
+                  191	9 -> 0
+                  
+Chain Insertion : 1095	0 -> 10
+                  
+Chain Expulsion : 1125	11 -> 0
+                  
+Chain Insertion : 1181	0 -> 14
+                  862	0 -> 14
+                  1134	0 -> 14
+                  651	0 -> 14
+                  23	0 -> 14
+                  
+Chain Expulsion : 489	14 -> 0
+                  
+Chain Insertion : 1291	0 -> 15
+                  
+Chain Expulsion : 991	15 -> 0
+                  
+Chain Insertion : 1283	0 -> 16
+                  
+Chain Expulsion : 294	16 -> 0
+                  
+Chain Insertion : 720	0 -> 17
+                  1098	0 -> 17
+                  
+Chain Expulsion : 736	17 -> 0
+                  
+Chain Expulsion : 499	18 -> 0
+                  
+Chain Expulsion : 1272	19 -> 0
+                  451	19 -> 0
+                  1205	19 -> 0
+                  
+
+
+SAMPLE : 2
+
+Fission : 20 = 21 22 
+Chain Expulsion : 1282	1 -> 0
+                  
+Chain Insertion : 152	0 -> 3
+                  1268	0 -> 3
+                  
+Chain Insertion : 335	0 -> 4
+                  
+Chain Expulsion : 1116	4 -> 0
+                  173	4 -> 0
+                  
+Chain Expulsion : 994	5 -> 0
+                  
+Chain Insertion : 1157	0 -> 6
+                  521	0 -> 6
+                  1271	0 -> 6
+                  720	17 -> 6
+                  
+Chain Expulsion : 984	6 -> 0
+                  
+Chain Expulsion : 938	7 -> 0
+                  
+Chain Insertion : 657	0 -> 8
+                  30	0 -> 8
+                  438	0 -> 8
+                  1075	0 -> 8
+                  
+Chain Expulsion : 1150	8 -> 0
+                  
+Chain Insertion : 191	0 -> 9
+                  915	0 -> 9
+                  
+Chain Expulsion : 29	9 -> 0
+                  
+Chain Expulsion : 153	10 -> 0
+                  
+Chain Insertion : 405	0 -> 12
+                  
+Chain Insertion : 649	0 -> 14
+                  
+Chain Expulsion : 1181	14 -> 0
+                  1017	14 -> 0
+                  
+Chain Insertion : 121	0 -> 15
+                  1267	0 -> 15
+                  
+Chain Insertion : 377	0 -> 16
+                  294	0 -> 16
+                  
+Chain Expulsion : 223	16 -> 0
+                  
+Chain Insertion : 736	0 -> 17
+                  
+Chain Expulsion : 720	17 -> 6
+                  
+Chain Expulsion : 599	18 -> 0
+                  
+Chain Insertion : 991	0 -> 19
+                  1205	0 -> 19
+                  
+
+
+SAMPLE : 3
+
+Fusion: 21  22  = 23
+Chain Insertion : 151	0 -> 1
+                  615	0 -> 1
+                  
+Chain Expulsion : 152	3 -> 0
+                  1100	3 -> 0
+                  
+Chain Insertion : 173	0 -> 4
+                  
+Chain Insertion : 994	0 -> 5
+                  
+Chain Expulsion : 1041	5 -> 0
+                  566	5 -> 0
+                  
+Chain Insertion : 984	0 -> 6
+                  
+Chain Expulsion : 521	6 -> 0
+                  720	6 -> 0
+                  
+Chain Expulsion : 742	7 -> 0
+                  
+Chain Insertion : 1150	0 -> 8
+                  
+Chain Expulsion : 1075	8 -> 0
+                  558	8 -> 0
+                  
+Chain Insertion : 14	0 -> 9
+                  
+Chain Expulsion : 822	9 -> 0
+                  191	9 -> 0
+                  
+Chain Expulsion : 90	10 -> 0
+                  637	10 -> 0
+                  
+Chain Insertion : 43	0 -> 11
+                  
+Chain Insertion : 111	0 -> 12
+                  
+Chain Expulsion : 705	12 -> 0
+                  
+Chain Insertion : 1181	0 -> 14
+                  489	0 -> 14
+                  
+Chain Expulsion : 649	14 -> 0
+                  
+Chain Insertion : 390	0 -> 15
+                  
+Chain Expulsion : 1291	15 -> 0
+                  879	15 -> 0
+                  
+Chain Expulsion : 1283	16 -> 0
+                  
+Chain Expulsion : 931	17 -> 0
+                  1059	17 -> 0
+                  568	17 -> 0
+                  1315	17 -> 0
+                  736	17 -> 0
+                  
+Chain Insertion : 223	0 -> 19
+                  
+
+
+SAMPLE : 4
+
+Fission : 23 = 24 25 
+Chain Insertion : 152	0 -> 1
+                  
+Chain Expulsion : 219	1 -> 0
+                  1049	1 -> 0
+                  
+Chain Insertion : 1229	0 -> 3
+                  139	0 -> 3
+                  
+Chain Expulsion : 38	3 -> 0
+                  
+Chain Insertion : 566	0 -> 5
+                  1041	0 -> 5
+                  
+Chain Insertion : 708	0 -> 6
+                  339	0 -> 6
+                  871	0 -> 6
+                  
+Chain Expulsion : 221	6 -> 0
+                  984	6 -> 0
+                  46	6 -> 0
+                  374	6 -> 0
+                  993	6 -> 0
+                  
+Chain Expulsion : 25	7 -> 0
+                  
+Chain Insertion : 1075	0 -> 8
+                  558	0 -> 8
+                  
+Chain Expulsion : 438	8 -> 0
+                  303	8 -> 0
+                  
+Chain Insertion : 31	0 -> 9
+                  822	0 -> 9
+                  
+Chain Expulsion : 1034	9 -> 0
+                  
+Chain Insertion : 749	0 -> 10
+                  637	0 -> 10
+                  454	0 -> 10
+                  153	0 -> 10
+                  
+Chain Insertion : 1125	0 -> 11
+                  
+Chain Insertion : 705	0 -> 12
+                  
+Chain Insertion : 1017	0 -> 14
+                  
+Chain Expulsion : 1181	14 -> 0
+                  651	14 -> 0
+                  489	14 -> 0
+                  
+Chain Insertion : 720	0 -> 15
+                  931	0 -> 15
+                  
+Chain Expulsion : 713	15 -> 0
+                  
+Chain Expulsion : 999	16 -> 0
+                  795	16 -> 0
+                  858	16 -> 0
+                  
+Chain Insertion : 1315	0 -> 17
+                  736	0 -> 17
+                  
+Chain Expulsion : 952	17 -> 0
+                  
+Chain Insertion : 725	0 -> 18
+                  
+
+
+SAMPLE : 5
+
+Fusion: 24  25  = 26
+Chain Insertion : 219	0 -> 1
+                  
+Chain Insertion : 38	0 -> 3
+                  695	0 -> 3
+                  649	0 -> 3
+                  
+Chain Insertion : 1291	0 -> 4
+                  
+Chain Insertion : 993	0 -> 6
+                  984	0 -> 6
+                  
+Chain Expulsion : 708	6 -> 0
+                  339	6 -> 0
+                  871	6 -> 0
+                  571	6 -> 0
+                  854	6 -> 0
+                  
+Chain Insertion : 410	0 -> 7
+                  547	0 -> 7
+                  
+Chain Insertion : 303	0 -> 8
+                  96	0 -> 8
+                  438	0 -> 8
+                  
+Chain Insertion : 1284	0 -> 9
+                  191	0 -> 9
+                  
+Chain Insertion : 90	0 -> 10
+                  
+Chain Expulsion : 153	10 -> 0
+                  
+Chain Insertion : 272	0 -> 12
+                  
+Chain Expulsion : 797	12 -> 0
+                  
+Chain Insertion : 1116	0 -> 14
+                  489	0 -> 14
+                  
+Chain Expulsion : 312	14 -> 0
+                  
+Chain Expulsion : 732	5 -> 0
+                  40	5 -> 0
+                  754	5 -> 0
+                  619	5 -> 0
+                  4	5 -> 0
+                  
+Chain Expulsion : 720	15 -> 0
+                  
+Chain Insertion : 1283	0 -> 16
+                  795	0 -> 16
+                  858	0 -> 16
+                  
+Chain Expulsion : 377	16 -> 0
+                  
+Chain Insertion : 952	0 -> 17
+                  
+Chain Expulsion : 326	19 -> 0
+                  996	19 -> 0
+                  1208	19 -> 0
+                  
+
+
+SAMPLE : 6
+
+Fusion: 3  17  = 27
+Fusion: 4  15  = 28
+Fission : 26 = 29 30 
+Chain Expulsion : 781	1 -> 0
+                  
+Chain Insertion : 374	0 -> 6
+                  
+Chain Insertion : 25	0 -> 7
+                  
+Chain Insertion : 194	26 -> 8
+                  
+Chain Expulsion : 303	8 -> 0
+                  420	8 -> 0
+                  724	8 -> 0
+                  233	8 -> 0
+                  96	8 -> 0
+                  438	8 -> 0
+                  231	8 -> 0
+                  1304	8 -> 0
+                  64	8 -> 0
+                  
+Chain Insertion : 153	0 -> 10
+                  
+Chain Expulsion : 90	10 -> 0
+                  
+Chain Insertion : 868	0 -> 11
+                  
+Chain Expulsion : 1286	12 -> 0
+                  1133	12 -> 0
+                  
+Chain Insertion : 999	0 -> 14
+                  
+Chain Expulsion : 577	14 -> 0
+                  934	14 -> 0
+                  1116	14 -> 28
+                  
+Chain Insertion : 619	0 -> 5
+                  754	0 -> 5
+                  
+Chain Insertion : 377	0 -> 16
+                  
+Chain Expulsion : 856	16 -> 0
+                  
+Chain Insertion : 326	0 -> 19
+                  996	0 -> 19
+                  1208	0 -> 19
+                  451	0 -> 19
+                  
+Chain Expulsion : 1109	19 -> 0
+                  223	19 -> 0
+                  
+
+
+SAMPLE : 7
+
+Fusion: 29  5  = 31
+Fission : 27 = 32 33 
+Chain Insertion : 781	0 -> 1
+                  1049	0 -> 1
+                  
+Chain Insertion : 931	0 -> 28
+                  
+Chain Expulsion : 547	7 -> 0
+                  794	7 -> 0
+                  
+Chain Insertion : 233	0 -> 8
+                  433	0 -> 8
+                  64	0 -> 8
+                  231	0 -> 8
+                  303	0 -> 8
+                  
+Chain Expulsion : 1326	9 -> 0
+                  
+Chain Expulsion : 407	10 -> 0
+                  
+Chain Expulsion : 868	11 -> 0
+                  
+Chain Insertion : 1133	0 -> 12
+                  1286	0 -> 12
+                  
+Chain Expulsion : 541	12 -> 0
+                  
+Chain Expulsion : 1062	14 -> 0
+                  
+Chain Insertion : 856	0 -> 16
+                  
+Chain Insertion : 223	0 -> 19
+                  
+
+
+=============================================
+
+Total samples analyzed: 8
+Chain insertion events per step : 17
+Chain expulsion events per step : 18.857143
+Stepwise association events per step : 0
+Stepwise dissociation events per step : 0
+Fission events per step : 0.57142857
+Fusion events per step : 0.85714286
