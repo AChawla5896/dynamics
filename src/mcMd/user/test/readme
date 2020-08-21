@@ -1,0 +1,24 @@
+The in/ directory has sample cluster files to test the program.
+It is designed to consist of 50 molecules. Use a cutoff_U of 4
+to test this program. 
+
+Sample information:
+
+Sample 1: 
+	Fusion: 0+1
+        Chain expulsion: 21 (to melt)
+
+Sample 2: 
+	Fission: 6
+	Chain insertion: 48 (from melt)
+
+Sample 3:
+	Fission: 0
+	Chain insertion: 21 (from melt)
+
+Sample 4: 
+	Stepwise association (no molecules in melt)
+
+Sample 5:
+	Stepwise dissociation (8 molecules in melt)
+

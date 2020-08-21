@@ -251,7 +251,7 @@ void clusterInfo::writeStep (std::ostream& out)
 {
    // Printing the molecules making up the melt
    out << "0" << "  ";
-   out << "(" << melt.size() << ")" << "\t";
+   out << "(" << melt.size() << ")" << "  "<<"\t" ;
    for (int iMol = 0; iMol < melt.size(); iMol++) {
       out << melt.at(iMol) << "  ";
    }
@@ -287,7 +287,7 @@ void clusterInfo::writeStep (std::ostream& out)
       } 
       index = clusterIndex (value);   
       out << clusterIds [index] << "  ";
-      out << "(" << clusters [index].size() << ")" << "\t";
+      out << "(" << clusters [index].size() << ")" << "  "<<"\t" ;
       for (int iMol = 0; iMol < clusters [index].size(); iMol++) {
          out << clusters [index].at(iMol) << "  ";
       }   

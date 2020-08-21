@@ -219,7 +219,7 @@ int main (){
    std::cout<<"======================================"<<std::endl;
    std::cout<<"Total samples analyzed: " << iSample << std::endl;
  
-   std::cout<<std::endl<<"Thank you.....Have a nice day....:D";
+   std::cout<<std::endl<<"Thank you.....Have a nice day....:D"<<std::endl;
  
    summary<<"============================================="<<std::endl<<std::endl;
    summary<<"Total samples analyzed: " << iSample << std::endl;

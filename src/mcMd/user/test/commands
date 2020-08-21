@@ -1,0 +1,8 @@
+Input Prefix: in/
+Output Prefix: out/
+Start: 1
+Increment: 1
+Final: 6
+Cutoff unimers: 4
+Cutoff for preserved micelle: 0.80
+Cutoff for fission/fusion: 0.20
