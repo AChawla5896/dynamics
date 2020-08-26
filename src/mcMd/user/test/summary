@@ -1,6 +1,7 @@
 SAMPLE : 1
 
-Fusion: 1  2  = 7
+Fusion : 1 2 = 7
+
 Chain Expulsion : 21	4 -> 0
                   
 
@@ -8,6 +9,7 @@ Chain Expulsion : 21	4 -> 0
 SAMPLE : 2
 
 Fission : 6 = 8 9 
+
 Chain Insertion : 48	0 -> 7
                   
 
@@ -15,6 +17,7 @@ Chain Insertion : 48	0 -> 7
 SAMPLE : 3
 
 Fission : 7 = 10 11 
+
 Chain Insertion : 21	0 -> 9
                   
 
@@ -24,9 +27,11 @@ SAMPLE : 4
 Stepwise association : 12
 
 
+
 SAMPLE : 5
 
 Stepwise dissociation : 11
+
 
 
 =============================================

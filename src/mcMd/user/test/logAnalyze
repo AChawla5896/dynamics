@@ -1,0 +1,23 @@
+Input Prefix: in/
+Output Prefix: out/
+Start: 1
+Increment: 1
+Final: 6
+Cutoff unimers: 4
+Cutoff for preserved micelle: 0.8
+Cutoff for fission/fusion: 0.2
+Number of histories: 3
+======================================
+SAMPLE : 1
+1  2  7  0  
+Ring Last :0
+SAMPLE : 2
+6  8  9  0  
+Ring Last :1
+SAMPLE : 3
+7  10  11  0  
+Ring Last :2
+SAMPLE : 4
+Ring Last :0
+SAMPLE : 5
+Ring Last :1

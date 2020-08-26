@@ -1,6 +1,7 @@
 SAMPLE : 1
 
-Fusion: 2  13  = 20
+Fusion : 2 13 = 20
+
 Chain Expulsion : 1268	3 -> 0
                   649	3 -> 0
                   1229	3 -> 0
@@ -71,6 +72,7 @@ Chain Expulsion : 1272	19 -> 0
 SAMPLE : 2
 
 Fission : 20 = 21 22 
+
 Chain Expulsion : 1282	1 -> 0
                   
 Chain Insertion : 152	0 -> 3
@@ -134,7 +136,8 @@ Chain Insertion : 991	0 -> 19
 
 SAMPLE : 3
 
-Fusion: 21  22  = 23
+Fusion : 21 22 = 23
+
 Chain Insertion : 151	0 -> 1
                   615	0 -> 1
                   
@@ -199,6 +202,7 @@ Chain Insertion : 223	0 -> 19
 SAMPLE : 4
 
 Fission : 23 = 24 25 
+
 Chain Insertion : 152	0 -> 1
                   
 Chain Expulsion : 219	1 -> 0
@@ -270,7 +274,8 @@ Chain Insertion : 725	0 -> 18
 
 SAMPLE : 5
 
-Fusion: 24  25  = 26
+Fusion : 24 25 = 26
+
 Chain Insertion : 219	0 -> 1
                   
 Chain Insertion : 38	0 -> 3
@@ -335,9 +340,12 @@ Chain Expulsion : 326	19 -> 0
 
 SAMPLE : 6
 
-Fusion: 3  17  = 27
-Fusion: 4  15  = 28
+Fusion : 3 17 = 27
+
+Fusion : 4 15 = 28
+
 Fission : 26 = 29 30 
+
 Chain Expulsion : 781	1 -> 0
                   
 Chain Insertion : 374	0 -> 6
@@ -390,8 +398,10 @@ Chain Expulsion : 1109	19 -> 0
 
 SAMPLE : 7
 
-Fusion: 29  5  = 31
+Fusion : 29 5 = 31
+
 Fission : 27 = 32 33 
+
 Chain Insertion : 781	0 -> 1
                   1049	0 -> 1
                   

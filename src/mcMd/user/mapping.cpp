@@ -175,7 +175,7 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
 
       // Identifying fusion events
       if (maxContribution1 [iCluster] < cutoff_P) {
-         summary<<"Fusion: ";
+         summary<<"Fusion : ";
          for (int i = 0; i < nClusters0 + 1; i++) {
             contribution1 [i] = contribution1[i]/(double) sum1;
             if (contribution1 [i] >= cutoff_F) {
@@ -186,7 +186,7 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
                   processed0 [i - 1] = 1;
                   preserved0 [i - 1] = 0;
                   nDynamic++;
-                  summary<<step0->clusterIds[i-1]<<"  ";
+                  summary<<step0->clusterIds[i-1]<<" ";
      //             std::cout<<"contribution1 :"<<contribution1 [i]<<std::endl;
      //             std::cout<<"Cluster id: "<<step0->clusterIds[i-1]<<std::endl;
      //             std::cout<<"nDynamic: "<<nDynamic<<std::endl;
@@ -213,7 +213,7 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
             std::cout << "Algorithmic error: Less than two micelles fusing"
                           << std::endl;
          }
-         summary<<"= "<<step0->maxClusterId<<std::endl;
+         summary<<"= "<<step0->maxClusterId<<std::endl<<std::endl;
       }
       else {
          // Micelle forming from melt
@@ -227,7 +227,7 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
    //         std::cout<<"iCluster : "<<iCluster<<std::endl;
     //        std::cout<<"Max contribution :"<<maxContribution1 [iCluster]<<std::endl;
             step1->updateClusterId(step1->clusterIds [iCluster], step0->maxClusterId);
-            summary<<step0->maxClusterId<<std::endl;
+            summary<<step0->maxClusterId<<std::endl<<std::endl;
             (* tally) [2]++; 
             processed1 [iCluster] = 1; 
             preserved1 [iCluster] = 0;
@@ -290,7 +290,8 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
                                    << std::endl;
                   }
                }   
-            }   
+            }
+            summary<<std::endl;   
             if (nDynamic >= 2) {
                processed0 [iCluster] = 1;
                preserved0 [iCluster] = 0;
@@ -309,7 +310,7 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
                processed0 [iCluster] = 1;
                preserved0 [iCluster] = 0;
                summary<<"Stepwise dissociation : "<<step0->clusterIds[iCluster]
-                         <<std::endl;
+                         <<std::endl<<std::endl;
        //        std::cout<<"Micelle dissociating into the melt"<<std::endl;
        //        std::cout<<"clusterId :"<<step0->clusterIds[iCluster]<<std::endl;
        //        std::cout<<"Max Contribution :"<<maxContribution0 [iCluster]<<std::endl ;
@@ -400,8 +401,8 @@ void mapping (clusterInfo* step0, clusterInfo* step1, double cutoff_P, double cu
                      summary<<"                  ";
                      (* tally) [0]++;
                   }   
-               }   
-               summary<<std::endl; 
+               }
+               summary<<std::endl;   
             }
 
             if (maxContribution0 [(index1 [iCluster] - 1)] != 1) {

@@ -25,7 +25,10 @@ int main (){
    *  Cutoff for preserved micelle: double (cutoff to identify if the micelle 
    *                                        preserved its identity or not)
    *  Cutoff for fission/fusion: double (cutoff to identify which of the micelles 
-   *                                     fused/split)                               
+   *                                     fused/split)                              
+   *  Number of histories: int (number of histories to use while analyzing if 
+   *                            there are repeated fission or fusion of the 
+   *                            same cluster)                                    
    */
 
    // summary file outputs the all the dynamic processes taking place from the 
@@ -47,6 +50,8 @@ int main (){
    double cutoff_P;
    std::string l8 ("Cutoff for fission/fusion");
    double cutoff_F;
+   std::string l9 ("Number of histories");
+   int Nh;
 
    // Reading commands file
    std::string line;
@@ -102,7 +107,13 @@ int main (){
          ParaInput.erase(0,1);
          cutoff_F = stod (ParaInput);
          std::cout<<l8<<": "<<cutoff_F<<std::endl;
-      }  
+      } 
+      else if (head == l9) {
+         std::getline(linestream, ParaInput);
+         ParaInput.erase(0,1);
+         Nh = stoi (ParaInput);
+         std::cout<<l9<<": "<<Nh<<std::endl;
+      } 
       else {
          std::cout << "Wrong input format"<<std::endl;
       }

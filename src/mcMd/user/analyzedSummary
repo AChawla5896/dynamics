@@ -1,0 +1,28 @@
+SAMPLE : 1
+
+
+SAMPLE : 2
+
+
+SAMPLE : 3
+
+
+SAMPLE : 4
+
+
+SAMPLE : 5
+
+
+SAMPLE : 6
+Fusion : 4 15 = 28
+
+
+=============================================
+
+Total samples analyzed: 6
+Chain insertion events per step : 0
+Chain expulsion events per step : 0
+Stepwise association events per step : 0
+Stepwise dissociation events per step : 0
+Fission events per step : 0
+Fusion events per step : 0.16666667
