@@ -139,11 +139,31 @@ int main (){
 
    int iSample = 1;
 
+   std::string inClusters (IPre+".clusters");
+   std::string inCOMs (IPre+".COMs");
+   std::string inMoments (IPre+".momentTensors");
+   std::string outClusters (OPre+".clusters");
+   std::string outCOMs (OPre+".COMs");
+   std::string outMoments (OPre+".momentTensors");
+
    // Setting the file streams and cluster variables
-   std::ifstream inFileName0 (IPre+to_string(T0));
-   std::ifstream inFileName1 (IPre+to_string(T0+delT));
-   std::ofstream outFileName0 (OPre+to_string(T0));
-   std::ofstream outFileName1 (OPre+to_string(T0+delT));
+   std::ifstream inFileClusters0 (inClusters+to_string(T0));
+   std::ifstream inFileCOMs0 (inCOMs+to_string(T0));
+   std::ifstream inFileMoments0 (inMoments+to_string(T0));
+   std::ifstream inFileClusters1;
+   std::ifstream inFileCOMs1;
+   std::ifstream inFileMoments1;
+
+
+   std::ofstream outFileClusters0 (outClusters+to_string(T0));
+   std::ofstream outFileCOMs0 (outCOMs+to_string(T0));
+   std::ofstream outFileMoments0 (outMoments+to_string(T0));
+   std::ofstream outFileClusters1;
+   std::ofstream outFileCOMs1;
+   std::ofstream outFileMoments1;
+   //std::ofstream outFileName0 (OPre+to_string(T0));
+   //std::ofstream outFileName1 (OPre+to_string(T0+delT));
+
    std::ofstream summary ("summary");
    clusterInfo step0;
    clusterInfo step1;
@@ -151,62 +171,70 @@ int main (){
    clusterInfo* add1;
 
    // Associating pointers with the objects
-   add0 = &step0;
-   add1 = &step1; 
+   //add0 = &step0;
+   //add1 = &step1; 
 
    /* Read the first two time steps using readStep0 so as to allocate 
    * the DArrays
    */
-   step0.readStep0(inFileName0, cutoff_U);
-   step1.readStep0(inFileName1, cutoff_U);
+   //step0.readStep0(inFileName0, cutoff_U);
+   //step1.readStep0(inFileName1, cutoff_U);
+
+   step0.readStep(inFileClusters0, inFileCOMs0, inFileMoments0, cutoff_U);
+   //step1.readStep(inFileClusters1, inFileCOMs1, inFileMoments1, cutoff_U);
 
    // Update maxClusterId. This is a static variable.
    // After this it needs to be updated in the mapping function
    step0.maxClusterId = step0.nClusters;
 
    // Checking if nClusters at step1 is greater than maxId set till now
-   maxId (& step0, & step1);
+   //maxId (& step0, & step1);
 
-   summary<<"SAMPLE : "<<iSample<<std::endl<<std::endl;
+   //summary<<"SAMPLE : "<<iSample<<std::endl<<std::endl;
 
    // Add a MAPPING command over here
-   mapping (& step0, & step1, cutoff_P, cutoff_F, & tally, summary);   
+   //mapping (& step0, & step1, cutoff_P, cutoff_F, & tally, summary);   
  
    // Writing these timesteps to new output files
-   step0.writeStep(outFileName0);
-   step1.writeStep(outFileName1);
+   step0.writeStep(outFileClusters0, outFileCOMs0, outFileMoments0);
+   //step1.writeStep(outFileName1);
    
-   summary<<std::endl<<std::endl; 
+   //summary<<std::endl<<std::endl; 
 
    // Clearing the input and output streams for step0. Reinitialize 
    // using the open function of these streams.
-   inFileName0.close(); 
-   outFileName0.close();
+   //inFileClusters0.close(); 
+   //inFileCOMs0.close();
+   //inFileMoments0.close();
+
+   //outFileClusters0.close();
+   //outFileCOMs0.close();
+   //outFileMoments0.close();
 
    // iFile is the string that needs to be appended to the filename
    // iSample is the number of samples that have been analyzed
    // 2 files have already been mapped using readStep0
-   iSample++;
+   //iSample++;
 
-   for (int iFile = (T0+(2*delT)); iFile <= Tf; iFile+=delT) {
+   for (int iFile = (T0+delT); iFile <= Tf; iFile+=delT) {
 
-      // Clearing the IO variables for step 1
-      inFileName1.close();
-      outFileName1.close();
-
-      // Copying step1 to step0 after clearing step0.
-      step0 = *add1;
-      step1 = *add0;
-      step1.clear();
- 
       // Reinitializing the IO variable
-      inFileName1.open(IPre+to_string(iFile));
-      outFileName1.open(OPre+to_string(iFile));
+
+      inFileClusters1.open (inClusters+to_string(iFile));
+      inFileCOMs1.open (inCOMs+to_string(iFile));
+      inFileMoments1.open (inMoments+to_string(iFile));
+
+      outFileClusters1.open (outClusters+to_string(iFile));
+      outFileCOMs1.open (outCOMs+to_string(iFile));
+      outFileMoments1.open (outMoments+to_string(iFile));
+
+      //inFileName1.open(IPre+to_string(iFile));
+      //outFileName1.open(OPre+to_string(iFile));
       summary<<"SAMPLE : "<<iSample<<std::endl;
       summary<<std::endl;
 
       // Reading the next cluster file
-      step1.readStep(inFileName1, cutoff_U);
+      step1.readStep(inFileClusters1, inFileCOMs1, inFileMoments1, cutoff_U);
 
       std::cout<<"************iFile : "<<iFile<<"*************"<<std::endl; 
 
@@ -217,7 +245,7 @@ int main (){
       mapping (& step0, & step1, cutoff_P, cutoff_F, & tally, summary);
 
       // Writing the step1 file 
-      step1.writeStep(outFileName1);
+      step1.writeStep(outFileClusters1, outFileCOMs1, outFileMoments1);
       summary<<std::endl<<std::endl;
 
       add1 = &step1;
@@ -225,6 +253,19 @@ int main (){
 
       iSample++;
 
+      // Clearing the IO variables for step 1
+      inFileClusters1.close();
+      inFileCOMs1.close();
+      inFileMoments1.close();
+
+      outFileClusters1.close();
+      outFileCOMs1.close();
+      outFileMoments1.close();
+
+      // Copying step1 to step0 after clearing step0.
+      step0 = *add1;
+      step1 = *add0;
+      step1.clear();
    }
 
    std::cout<<"======================================"<<std::endl;

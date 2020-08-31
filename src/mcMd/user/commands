@@ -1,5 +1,5 @@
-Input Prefix: in/cluster.clusters
-Output Prefix: out_BD/cluster.clusters
+Input Prefix: in/cluster
+Output Prefix: out_BD/cluster
 Start: 14990
 Increment: 1
 Final: 14997

@@ -24,14 +24,15 @@ class clusterInfo{
       // cutoff_U is required as a parameter so as to call oragnize.
       // See organize for its details. 
       void readStep0 (std::istream& in, int cutoff_U);
-      void readStep (std::istream& in, int cutoff_U);
+      void readStep (std::istream& inClusters, std::istream& inCOMs, std::istream& inMoments, int cutoff_U);
 
       // This function will organize the read in clusters so as to have
       // the cluster [0] consist of clusters having aggregation number 
       // less than equal to cutoff_U. Rest of the clusters will remain 
       // untouched. nClusters, clusterId and whichCluster should be changed 
       // accordingly.
-      void organize (std::vector< std::vector<int > > clustersRead, int cutoff_U);
+      void organize (std::vector< std::vector<int > > clustersRead, std::vector< std::vector<double > > COMsRead, 
+                        std::vector< std::vector<double > > momentsRead, int cutoff_U);
 
       // This function will be used to find the index of the given clusterId
       // in the vector cluster Id
@@ -42,7 +43,7 @@ class clusterInfo{
       // accepted as the correct output of the cluster Index function
       int clusterIndex (int Id);
 
-      void writeStep (std::ostream& out);
+      void writeStep (std::ostream& outClusters, std::ostream& outCOMs, std::ostream& outMoments);
 
       // Will find the number of lines in the output file
       // and also update nClusters
@@ -63,6 +64,16 @@ class clusterInfo{
       // Outer vector size: nClusters
       // Inner vector size: aggregation number of each of the clusters
       std::vector< std::vector<int > > clusters;
+
+      // Consists of all the information on COMs
+      // Outer vector size: nClusters
+      // Inner vector size: 3
+      std::vector< std::vector<double > > COMs;
+
+      // Consists of all the information on momentsTensors
+      // Outer vector size: nClusters
+      // Inner vector size: 9
+      std::vector< std::vector<double > > moments;
 
       // Consists of the list of all the molecules part of clusters which 
       // have an aggregation number less than equal to cutoff_U.

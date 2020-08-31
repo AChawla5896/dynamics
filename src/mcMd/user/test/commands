@@ -1,5 +1,5 @@
-Input Prefix: in/
-Output Prefix: out/
+Input Prefix: in/cluster
+Output Prefix: out/cluster
 Start: 1
 Increment: 1
 Final: 6

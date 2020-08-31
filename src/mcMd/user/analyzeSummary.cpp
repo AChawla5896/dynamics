@@ -308,19 +308,19 @@ int main (){
             }   
          }
 
-         for (int i = 0; i < temp.fusion.size(); i++) { 
-            for (int j = 0; j < temp.fusion [i].size(); j++) {
-               std::cout<<temp.fusion [i] [j] <<"  ";
-            }  
-            std::cout<<endl;
-         }
+         //for (int i = 0; i < temp.fusion.size(); i++) { 
+         //   for (int j = 0; j < temp.fusion [i].size(); j++) {
+         //      std::cout<<temp.fusion [i] [j] <<"  ";
+         //   }  
+         //   std::cout<<endl;
+         //}
 
-         for (int i = 0; i < temp.fission.size(); i++) {
-            for (int j = 0; j < temp.fission [i].size(); j++) {
-               std::cout<<temp.fission [i] [j] <<"  ";
-            }
-            std::cout<<endl;
-         }
+         //for (int i = 0; i < temp.fission.size(); i++) {
+         //   for (int j = 0; j < temp.fission [i].size(); j++) {
+         //      std::cout<<temp.fission [i] [j] <<"  ";
+         //   }
+         //   std::cout<<endl;
+         //}
 
          if(histories.isFull()) {
             check (Nh, & histories);

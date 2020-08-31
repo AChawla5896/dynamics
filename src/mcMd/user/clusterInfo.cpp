@@ -7,6 +7,7 @@
 #include <util/containers/GArray.h>              // member template
 #include <util/containers/ArrayIterator.h>
 #include <iostream>
+#include <iomanip>
 #include <algorithm>
 #include <sstream>
 #include <string>
@@ -82,7 +83,7 @@ void clusterInfo::readStep0 (std::istream& in, int cutoff_U)
 
    // Orgainze the clusters so as to have clusters[0] have a list of molecules
    // in clusters having aggregation number less than equal to a cutoff
-   organize (clustersRead, cutoff_U);
+   //organize (clustersRead, cutoff_U);
 
    // Finding the total number of molecules in the simulation
    // also allocating the DArray, whichClusterId 
@@ -119,7 +120,7 @@ void clusterInfo::readStep0 (std::istream& in, int cutoff_U)
    }
 }
 
-void clusterInfo::readStep (std::istream& in, int cutoff_U)
+void clusterInfo::readStep (std::istream& inClusters, std::istream& inCOMs, std::istream& inMoments, int cutoff_U)
 {
    // The clusterId will be read as string and then 
    // converted to integer. These are the two corresponding 
@@ -137,13 +138,19 @@ void clusterInfo::readStep (std::istream& in, int cutoff_U)
    // Work Array to store in read in clusters
    std::vector< std::vector<int > > clustersRead;
 
+   // Work Array to store in read in COMs
+   std::vector< std::vector<double > > COMsRead;
+
+   // Work Array to store in read in moments
+   std::vector< std::vector<double > > momentsRead;
+
    // Work Array to store in read in clusterIds
    // You might not need this.
    std::vector<int > clusterIdsRead;
 
    // Calling countLines to count the number of clusters
    // in the file. nClusters is updated.
-   countLines (in);  
+   countLines (inClusters);  
 
    // A while loop can go to the end of file. This loop 
    // will fill in the corresponding values.
@@ -151,7 +158,7 @@ void clusterInfo::readStep (std::istream& in, int cutoff_U)
    int iCluster = 0;
    std::string line;
 
-   while (getline( in, line )) {
+   while (getline( inClusters, line )) {
 
       std::istringstream linestream( line );
 
@@ -172,17 +179,94 @@ void clusterInfo::readStep (std::istream& in, int cutoff_U)
    }
 
    // Resetting the ifstream to the beginning of the file
-   in.clear();
-   in.seekg (0, std::ios::beg);
+   inClusters.clear();
+   inClusters.seekg (0, std::ios::beg);
 
    // Assert iCluster is equal to nClusters
    if (iCluster != nClusters) {
       std::cout << "Read file error: iCluster is not equal to nCluster" << std::endl;
    }
+   
+   // Clearing the workArray
+   clusterIdsRead.clear();
+
+   // Reading in the center of mass
+   while (getline( inCOMs, line )) {
+
+      std::istringstream linestream( line );
+
+      // reads in the clusterId from the file and sets it in the
+      // vector clusterIds.
+      std::getline(linestream, clusterIdSt, '(' );
+      clusterIdInt = stoi(clusterIdSt);
+      clusterIdsRead.push_back (clusterIdInt);
+
+      std::getline(linestream, clusterAggSt, ')' );
+      clusterAggInt = stoi(clusterAggSt);
+
+      COMsRead.push_back ( std::vector<double>( std::istream_iterator<double>(linestream),
+                                  std::istream_iterator<double>()) );
+   }
+
+   // Resetting the ifstream to the beginning of the file
+   inCOMs.clear();
+   inCOMs.seekg (0, std::ios::beg);
+
+   // Clearing the workArray
+   clusterIdsRead.clear();
+
+   // Reading in the moment Tensors
+   while (getline( inMoments, line )) {
+
+      std::istringstream linestream( line );
+
+      // reads in the clusterId from the file and sets it in the
+      // vector clusterIds.
+      std::getline(linestream, clusterIdSt, '(' );
+      clusterIdInt = stoi(clusterIdSt);
+      clusterIdsRead.push_back (clusterIdInt);
+
+      std::getline(linestream, clusterAggSt, ')' );
+      clusterAggInt = stoi(clusterAggSt);
+
+      momentsRead.push_back ( std::vector<double>( std::istream_iterator<double>(linestream),
+                                  std::istream_iterator<double>()) );
+   }
+
+   // Resetting the ifstream to the beginning of the file
+   inMoments.clear();
+   inMoments.seekg (0, std::ios::beg);
+
+   // Clearing the workArray
+   clusterIdsRead.clear();
 
    // Orgainze the clusters so as to have clusters[0] have a list of molecules
    // in clusters having aggregation number less than equal to a cutoff
-   organize (clustersRead, cutoff_U);
+   organize (clustersRead, COMsRead, momentsRead, cutoff_U);
+
+   // Allocates the DArray if it is not allocated
+   // Assumes that whichClusterId and isProcessed will be allocated together
+   if (!(whichClusterId.isAllocated())) {
+      nMolecules = -1;
+      // Finding the total number of molecules in the simulation
+      // also allocating the DArray, whichClusterId and isProcessed
+      for (int iMol = 0; iMol < melt.size(); iMol++) {
+         if ( melt [iMol] > nMolecules ) {
+            nMolecules = melt [iMol];
+         }
+      }
+      for (int iCluster = 0; iCluster < nClusters; iCluster++) {
+         for (int iMol = 0; iMol < clusters [iCluster].size(); iMol++) {
+            if ( clusters [iCluster] [iMol] > nMolecules ) {
+               nMolecules = clusters [iCluster] [iMol];
+            }
+         }
+      }
+      // Incrementing because the numbering of molecules starts from 0
+      nMolecules++;
+      whichClusterId.allocate(nMolecules);
+      isProcessed.allocate(nMolecules);
+   }
 
    // Setting the DArray which cluster.
    // Will be used in mapping
@@ -200,7 +284,8 @@ void clusterInfo::readStep (std::istream& in, int cutoff_U)
 
 }
 
-void clusterInfo::organize (std::vector< std::vector<int > > clustersRead, int cutoff_U)
+void clusterInfo::organize (std::vector< std::vector<int > > clustersRead, std::vector< std::vector<double > > COMsRead,
+                               std::vector< std::vector<double > > momentsRead, int cutoff_U)
 {
    // clusterIds go from 1 - (nClusters)
    // melt has clusterId=0
@@ -212,6 +297,8 @@ void clusterInfo::organize (std::vector< std::vector<int > > clustersRead, int c
       }
       else {
          clusters.push_back(clustersRead[iCluster]);
+         COMs.push_back(COMsRead[iCluster]);
+         moments.push_back(momentsRead[iCluster]);
       }
    }
 
@@ -247,15 +334,15 @@ int clusterInfo::clusterIndex (int Id)
    return index;
 }
 
-void clusterInfo::writeStep (std::ostream& out)
+void clusterInfo::writeStep (std::ostream& outClusters, std::ostream& outCOMs, std::ostream& outMoments)
 {
    // Printing the molecules making up the melt
-   out << "0" << "  ";
-   out << "(" << melt.size() << ")" << "  "<<"\t" ;
+   outClusters << "0" << "  ";
+   outClusters << "(" << melt.size() << ")" << "  "<<"\t" ;
    for (int iMol = 0; iMol < melt.size(); iMol++) {
-      out << melt.at(iMol) << "  ";
+      outClusters << melt.at(iMol) << "  ";
    }
-   out << "\n";
+   outClusters << "\n";
  
    int max = -1;
    int index = -1;
@@ -286,12 +373,29 @@ void clusterInfo::writeStep (std::ostream& out)
          }
       } 
       index = clusterIndex (value);   
-      out << clusterIds [index] << "  ";
-      out << "(" << clusters [index].size() << ")" << "  "<<"\t" ;
+
+      outClusters << clusterIds [index] << "  ";
+      outCOMs << clusterIds [index] << "  ";
+      outMoments << clusterIds [index] << "  ";
+
+      outClusters << "(" << clusters [index].size() << ")" << "  "<<"\t" ;
       for (int iMol = 0; iMol < clusters [index].size(); iMol++) {
-         out << clusters [index].at(iMol) << "  ";
+         outClusters << clusters [index].at(iMol) << "  ";
       }   
-      out << "\n";
+      outClusters << "\n";
+
+      outCOMs << "(" << clusters [index].size() << ")" << "  "<<"\t" ;
+      for (int iCOM = 0; iCOM < COMs [index].size(); iCOM++) {
+         outCOMs << COMs [index].at(iCOM)<< std::setprecision(3) << "  ";
+      } 
+      outCOMs << "\n";
+
+      outMoments << "(" << clusters [index].size() << ")" << "  "<<"\t" ;
+      for (int iMoment = 0; iMoment < moments [index].size(); iMoment++) {
+         outMoments << moments [index].at(iMoment)<< std::setprecision(8) << "  ";
+      }
+      outMoments << "\n";
+
       print [index] = 1;
       value = max;
    }
@@ -305,6 +409,16 @@ void clusterInfo::clear()
    clusters.clear();
    melt.clear();
    clusterIds.clear();
+
+   for (int iCOM = 0; iCOM < nClusters; iCOM++) {
+      COMs [iCOM].clear();
+   }   
+   COMs.clear();
+
+   for (int iMoment = 0; iMoment < nClusters; iMoment++) {
+      moments [iMoment].clear();
+   }   
+   moments.clear();
 
    nClusters = -1;
 }
